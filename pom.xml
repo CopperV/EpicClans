@@ -32,13 +32,18 @@
 			<layout>default</layout>
 		</repository>
 		<repository>
-		    <id>nexus</id>
-		    <name>Lumine Releases</name>
-		    <url>https://mvn.lumine.io/repository/maven-public/</url>
+			<id>nexus</id>
+			<name>Lumine Releases</name>
+			<url>https://mvn.lumine.io/repository/maven-public/</url>
 		</repository>
 		<repository>
 			<id>sk89q-repo</id>
 			<url>https://maven.enginehub.org/repo/</url>
+		</repository>
+		<repository>
+			<id>placeholderapi</id>
+			<url>
+				https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -49,9 +54,9 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-		  	<groupId>de.tr7zw</groupId>
-		  	<artifactId>item-nbt-api-plugin</artifactId>
-		  	<version>2.11.3</version>
+			<groupId>de.tr7zw</groupId>
+			<artifactId>item-nbt-api-plugin</artifactId>
+			<version>2.11.3</version>
 		</dependency>
 		<dependency>
 			<groupId>io.github.rysefoxx.inventory</groupId>
@@ -90,10 +95,16 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-		    <groupId>io.lumine</groupId>
-		    <artifactId>Mythic-Dist</artifactId>
-		    <version>5.3.2</version>  
-		    <scope>provided</scope>
+			<groupId>io.lumine</groupId>
+			<artifactId>Mythic-Dist</artifactId>
+			<version>5.3.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>me.clip</groupId>
+			<artifactId>placeholderapi</artifactId>
+			<version>2.10.5</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
