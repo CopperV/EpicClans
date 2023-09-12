@@ -1,6 +1,8 @@
 package me.Vark123.EpicClans;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -48,38 +50,40 @@ public final class FileManager {
 				String color = fYml.getString("color");
 				
 				ConfigurationSection roleSection = fYml.getConfigurationSection("roles");
-				Collection<ClanRole> roles = roleSection.getKeys(false).stream()
-						.map(key -> {
-							String roleId = roleSection.getString(key+".id");
-							String roleDisplay = roleSection.getString(key+".display");
-							int rolePriority = roleSection.getInt(key+".priority");
-							List<ClanPermission> permissions = roleSection.getStringList(key+".perm").stream()
-									.map(line -> line.toUpperCase())
-									.filter(line -> EnumUtils.isValidEnum(ClanPermission.class, line))
-									.map(ClanPermission::valueOf)
-									.collect(Collectors.toList());
-							return new ClanRole(roleId, roleDisplay, rolePriority, true, permissions);
-						})
-						.collect(Collectors.toList());
+				Collection<ClanRole> roles = roleSection != null ? 
+						roleSection.getKeys(false).stream()
+							.map(key -> {
+								String roleId = roleSection.getString(key+".id");
+								String roleDisplay = roleSection.getString(key+".display");
+								int rolePriority = roleSection.getInt(key+".priority");
+								List<ClanPermission> permissions = roleSection.getStringList(key+".perm").stream()
+										.map(line -> line.toUpperCase())
+										.filter(line -> EnumUtils.isValidEnum(ClanPermission.class, line))
+										.map(ClanPermission::valueOf)
+										.collect(Collectors.toList());
+								return new ClanRole(roleId, roleDisplay, rolePriority, true, permissions);
+							})
+							.collect(Collectors.toList()) : new ArrayList<>();
 				roles.addAll(ClanManager.get().getBaseRoles());
 				
 				Map<ClanPlayer, ClanRole> members = new ConcurrentHashMap<>();
 				ConfigurationSection memberSection = fYml.getConfigurationSection("members");
-				memberSection.getKeys(false).forEach(key -> {
-					UUID uid = UUID.fromString(memberSection.getString("uid"));
-					ClanPlayer cPlayer = new ClanPlayer(uid);
-					
-					String roleId = memberSection.getString("role");
-					roles.stream()
-						.filter(role -> role.getId().equals(roleId))
-						.findAny()
-						.ifPresentOrElse(role -> {
-							members.put(cPlayer, role);
-						}, () -> {
-							ClanRole role = roles.stream().filter(_role -> _role.getId().equals("member")).findAny().get();
-							members.put(cPlayer, role);
-						});
-				});
+				if(memberSection != null)
+					memberSection.getKeys(false).forEach(key -> {
+						UUID uid = UUID.fromString(memberSection.getString(key+".uid"));
+						ClanPlayer cPlayer = new ClanPlayer(uid);
+						
+						String roleId = memberSection.getString(key+".role");
+						roles.stream()
+							.filter(role -> role.getId().equals(roleId))
+							.findAny()
+							.ifPresentOrElse(role -> {
+								members.put(cPlayer, role);
+							}, () -> {
+								ClanRole role = roles.stream().filter(_role -> _role.getId().equals("member")).findAny().get();
+								members.put(cPlayer, role);
+							});
+					});
 				
 				Clan clan = Clan.builder()
 						.id(id)
@@ -98,11 +102,51 @@ public final class FileManager {
 	}
 	
 	public static void saveClan(Clan clan) {
+		File file = new File(clanDir, clan.getId()+".yml");
+		if(!file.exists())
+			try {
+				file.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		YamlConfiguration fYml = YamlConfiguration.loadConfiguration(file);
 		
+		fYml.set("id", clan.getId());
+		fYml.set("display", clan.getName());
+		fYml.set("color", clan.getColor());
+		
+		fYml.set("roles", null);
+		fYml.set("members", null);
+		
+		clan.getRoles().stream()
+			.filter(role -> !ClanManager.get().getBaseRoles().contains(role))
+			.forEach(role -> {
+				String roleId = role.getId();
+				fYml.set("roles."+roleId+".id", roleId);
+				fYml.set("roles."+roleId+".display", role.getDisplay());
+				fYml.set("roles."+roleId+".priority", role.getPriority());
+				fYml.set("roles."+roleId+".perm", role.getPermissions().stream()
+						.map(perm -> perm.name())
+						.collect(Collectors.toList()));
+			});
+		clan.getMembers().entrySet().stream().forEach(entry -> {
+			ClanPlayer cPlayer = entry.getKey();
+			ClanRole role = entry.getValue();
+			String uid = cPlayer.getUid().toString();
+			
+			fYml.set("members."+uid+".uid", uid);
+			fYml.set("members."+uid+".role", role.getId());
+		});
+		
+		try {
+			fYml.save(file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void saveClans() {
-		
+		ClanManager.get().getClans().forEach(FileManager::saveClan);
 	}
 	
 }
