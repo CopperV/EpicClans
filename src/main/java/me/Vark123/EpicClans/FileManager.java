@@ -19,6 +19,7 @@ import me.Vark123.EpicClans.ClanSystem.Clan;
 import me.Vark123.EpicClans.ClanSystem.ClanManager;
 import me.Vark123.EpicClans.ClanSystem.ClanPermission;
 import me.Vark123.EpicClans.ClanSystem.ClanRole;
+import me.Vark123.EpicClans.ClanSystem.ClanTreasury;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
 
@@ -85,12 +86,26 @@ public final class FileManager {
 							});
 					});
 				
+				double money = fYml.getDouble("treasury.money", 0);
+				int stygia = fYml.getInt("treasury.stygia", 0);
+				int coins = fYml.getInt("treasury.coins", 0);
+				int ruda = fYml.getInt("treasury.ruda", 0);
+				int pr = fYml.getInt("treasury.pr", 0);
+				ClanTreasury treasury = ClanTreasury.builder()
+						.money(money)
+						.stygia(stygia)
+						.coins(coins)
+						.ruda(ruda)
+						.pr(pr)
+						.build();
+				
 				Clan clan = Clan.builder()
 						.id(id)
 						.name(display)
 						.color(color)
 						.roles(roles)
 						.members(members)
+						.treasury(treasury)
 						.build();
 				ClanManager.get().registerClan(clan);
 				
@@ -114,6 +129,13 @@ public final class FileManager {
 		fYml.set("id", clan.getId());
 		fYml.set("display", clan.getName());
 		fYml.set("color", clan.getColor());
+		
+		ClanTreasury treasury = clan.getTreasury();
+		fYml.set("treasury.money", treasury.getMoney());
+		fYml.set("treasury.stygia", treasury.getStygia());
+		fYml.set("treasury.coins", treasury.getCoins());
+		fYml.set("treasury.ruda", treasury.getRuda());
+		fYml.set("treasury.pr", treasury.getPr());
 		
 		fYml.set("roles", null);
 		fYml.set("members", null);

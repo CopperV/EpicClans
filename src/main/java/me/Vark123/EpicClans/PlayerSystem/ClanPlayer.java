@@ -82,7 +82,7 @@ public class ClanPlayer {
 		click.setClickEvent(new ClickEvent(Action.RUN_COMMAND, "/epicclan join "+clan.getId()));
 		comp.addExtra(click);
 		p2.spigot().sendMessage(ChatMessageType.CHAT, comp);
-		p.sendMessage("§7["+Config.get().getPrefix()+"§7] §bZaprosiles §7§o"+p2.getName()+" §ddo klanu!");
+		p.sendMessage("§7["+Config.get().getPrefix()+"§7] §bZaprosiles §7§o"+p2.getName()+" §bdo klanu!");
 		
 		Bukkit.getLogger().log(Level.INFO, "["+ChatColor.stripColor(Config.get().getPrefix())+"] "+p.getName()+" send clan invitation ["+clan.getId()+"] to "+p2.getName());
 	}

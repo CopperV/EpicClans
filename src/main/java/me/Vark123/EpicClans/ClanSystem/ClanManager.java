@@ -10,6 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 import lombok.Getter;
@@ -18,7 +19,10 @@ import me.Vark123.EpicClans.FileManager;
 import me.Vark123.EpicClans.ClanSystem.Events.ClanCreateEvent;
 import me.Vark123.EpicClans.ClanSystem.Events.ClanEvent;
 import me.Vark123.EpicClans.ClanSystem.Events.ClanJoinEvent;
+import me.Vark123.EpicClans.ClanSystem.Events.ClanKickEvent;
+import me.Vark123.EpicClans.ClanSystem.Events.ClanLeaveEvent;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
+import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
 import net.md_5.bungee.api.ChatColor;
 
 @Getter
@@ -69,8 +73,14 @@ public final class ClanManager {
 		members.put(
 				cPlayer,
 				baseRoles.stream().filter(_role -> _role.getId().equals("leader")).findAny().get());
-		Clan clan = new Clan(id, name, Config.get().getClanDefaultColor(),
-				baseRoles, members);
+		Clan clan = Clan.builder()
+				.id(id)
+				.name(name)
+				.color(Config.get().getClanDefaultColor())
+				.treasury(ClanTreasury.builder().build())
+				.roles(baseRoles)
+				.members(members)
+				.build();
 		
 		Player p = cPlayer.toBukkitPlayer().getPlayer();
 		
@@ -119,6 +129,57 @@ public final class ClanManager {
 		newMember.setClan(clan);
 
 		Bukkit.getLogger().log(Level.INFO, "["+ChatColor.stripColor(Config.get().getPrefix())+"] "+p.getName()+" has joined to clan "+clan.getId());
+		return true;
+	}
+	
+	public boolean kickFromClan(Clan clan, ClanPlayer kicker, ClanPlayer kicked) {
+		ClanKickEvent event = new ClanKickEvent(clan, kicker, kicked);
+		Bukkit.getPluginManager().callEvent(event);
+		
+		Player p = kicker.toBukkitPlayer().getPlayer();
+		if(event.isCancelled()) {
+			p.sendMessage("§7["+Config.get().getPrefix()+"§7] §bNie mozesz wyrzucic z klanu §7"+kicked.toBukkitPlayer().getName());
+			if(event.getCancelMessage() != null && !event.getCancelMessage().isEmpty()) {
+				p.sendMessage("§bPowod: §r"+event.getCancelMessage());
+			}
+			return false;
+		}
+		
+		clan.getMembers().remove(kicked);
+		kicked.setClan(null);
+		OfflinePlayer kickedPlayer = kicked.toBukkitPlayer();
+		if(kickedPlayer.isOnline()) {
+			kickedPlayer.getPlayer().sendMessage("§7["+Config.get().getPrefix()+"§7] §bZostales wyrzucony z klanu §r"
+					+clan.getColor()+clan.getId()+" §r§bprzez §7§o"+p.getName());
+		} else {
+			PlayerManager.get().unregisterPlayer(kicked);
+		}
+		
+		clan.broadcastMessage("§7§o"+p.getName()+" §bwyrzucil §7§o"+kickedPlayer.getName()+" §bz klanu");
+
+		Bukkit.getLogger().log(Level.INFO, "["+ChatColor.stripColor(Config.get().getPrefix())+"] "+kickedPlayer.getName()+" has been kicked from clan "+clan.getId()+" by "+p.getName());
+		return true;
+	}
+	
+	public boolean leaveClan(Clan clan, ClanPlayer oldMember) {
+		ClanEvent event = new ClanLeaveEvent(clan, oldMember);
+		Bukkit.getPluginManager().callEvent(event);
+		
+		Player p = oldMember.toBukkitPlayer().getPlayer();
+		if(event.isCancelled()) {
+			p.sendMessage("§7["+Config.get().getPrefix()+"§7] §bNie mozesz opuscic klanu §r"+clan.getColor()+clan.getId());
+			if(event.getCancelMessage() != null && !event.getCancelMessage().isEmpty()) {
+				p.sendMessage("§bPowod: §r"+event.getCancelMessage());
+			}
+			return false;
+		}
+		
+		oldMember.setClan(null);
+		clan.getMembers().remove(oldMember);
+		p.getPlayer().sendMessage("§7["+Config.get().getPrefix()+"§7] §bOpusciles klan §r"+clan.getColor()+clan.getId());
+		clan.broadcastMessage("§7§o"+p.getName()+" §bopuscil klan");
+
+		Bukkit.getLogger().log(Level.INFO, "["+ChatColor.stripColor(Config.get().getPrefix())+"] "+p.getName()+" has lef clan "+clan.getId());
 		return true;
 	}
 	
