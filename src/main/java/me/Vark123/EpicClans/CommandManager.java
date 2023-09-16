@@ -13,6 +13,9 @@ import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanJoinCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanKickCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanLeaveCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanListCommand;
+import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanLogCommand;
+import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanPartyCommand;
+import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanRemoveCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanTreasuryCommand;
 
 public final class CommandManager {
@@ -32,6 +35,9 @@ public final class CommandManager {
 		ClanCommandManager.get().registerSubcommand(new ClanListCommand());
 		ClanCommandManager.get().registerSubcommand(new ClanTreasuryCommand());
 		ClanCommandManager.get().registerSubcommand(new ClanColorCommand());
+		ClanCommandManager.get().registerSubcommand(new ClanPartyCommand());
+		ClanCommandManager.get().registerSubcommand(new ClanRemoveCommand());
+		ClanCommandManager.get().registerSubcommand(new ClanLogCommand());
 	}
 	
 }

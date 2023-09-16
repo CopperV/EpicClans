@@ -6,14 +6,14 @@ import org.bukkit.entity.Player;
 import me.Vark123.EpicClans.ClanSystem.Clan;
 import me.Vark123.EpicClans.ClanSystem.ClanPermission;
 import me.Vark123.EpicClans.ClanSystem.Commands.AClanCommand;
-import me.Vark123.EpicClans.ClanSystem.MenuSystem.ColorSystem.ColorMenuManager;
+import me.Vark123.EpicClans.ClanSystem.MenuSystem.LogMenuSystem.ClanLogMenuManager;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
 
-public class ClanColorCommand extends AClanCommand {
+public class ClanLogCommand extends AClanCommand {
 
-	public ClanColorCommand() {
-		super("color", new String[]{"kolor"});
+	public ClanLogCommand() {
+		super("log", new String[]{"logs", "dziennik"});
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class ClanColorCommand extends AClanCommand {
 		PlayerManager.get().getByUID(sender.getUniqueId())
 			.ifPresentOrElse(cPlayer -> {
 				cPlayer.getClan().ifPresentOrElse(clan -> {
-					result.setValue(clan.hasPermission(cPlayer, ClanPermission.LEADER));
+					result.setValue(clan.hasPermission(cPlayer, ClanPermission.LOG));
 				}, () -> result.setFalse());
 			}, () -> result.setFalse());
 		return result.booleanValue();
@@ -32,13 +32,13 @@ public class ClanColorCommand extends AClanCommand {
 	public boolean useCommand(Player sender, String... args) {
 		ClanPlayer cPlayer = PlayerManager.get().getByUID(sender.getUniqueId()).get();
 		Clan clan = cPlayer.getClan().get();
-		ColorMenuManager.get().openMenu(sender, clan);
+		ClanLogMenuManager.get().openLogListMenu(sender, clan, 0);
 		return true;
 	}
 
 	@Override
 	public void showCorrectUsage(Player sender) {
-		sender.sendMessage("  §b/klan kolor §7- Zmien kolor swojego klanu");
+		sender.sendMessage("  §b/klan dziennik §7- Wyswietl klanowy dziennik zdarzen");
 	}
 
 }

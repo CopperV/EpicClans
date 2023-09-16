@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 
 import me.Vark123.EpicClans.ClanSystem.Clan;
 import me.Vark123.EpicClans.ClanSystem.Commands.AClanCommand;
-import me.Vark123.EpicClans.ClanSystem.TreasurySystem.TreasuryMenuManager;
+import me.Vark123.EpicClans.ClanSystem.MenuSystem.TreasurySystem.TreasuryMenuManager;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
 

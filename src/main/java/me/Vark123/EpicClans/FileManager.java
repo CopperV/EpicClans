@@ -11,20 +11,24 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.EnumUtils;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import lombok.Getter;
 import me.Vark123.EpicClans.ClanSystem.Clan;
 import me.Vark123.EpicClans.ClanSystem.ClanManager;
 import me.Vark123.EpicClans.ClanSystem.ClanPermission;
 import me.Vark123.EpicClans.ClanSystem.ClanRole;
 import me.Vark123.EpicClans.ClanSystem.ClanTreasury;
+import me.Vark123.EpicClans.ClanSystem.LogSystem.ClanLogger;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
 
 public final class FileManager {
 
+	@Getter
 	private static File clanDir = new File(Main.getInst().getDataFolder(), "clans");
 	
 	private FileManager() { }
@@ -43,9 +47,10 @@ public final class FileManager {
 	
 	private static void loadClans() {
 		Arrays.asList(clanDir.listFiles()).parallelStream()
-			.filter(file -> file.getName().endsWith(".yml"))
-			.map(YamlConfiguration::loadConfiguration)
-			.forEach(fYml -> {
+			.filter(file -> file.isDirectory())
+			.forEach(dir -> {
+				File info = new File(dir, "info.yml");
+				YamlConfiguration fYml = YamlConfiguration.loadConfiguration(info);
 				String id = fYml.getString("id");
 				String display = fYml.getString("display");
 				String color = fYml.getString("color");
@@ -106,6 +111,7 @@ public final class FileManager {
 						.roles(roles)
 						.members(members)
 						.treasury(treasury)
+						.logger(new ClanLogger(dir))
 						.build();
 				ClanManager.get().registerClan(clan);
 				
@@ -117,7 +123,11 @@ public final class FileManager {
 	}
 	
 	public static void saveClan(Clan clan) {
-		File file = new File(clanDir, clan.getId()+".yml");
+		File dir = new File(clanDir, clan.getId());
+		if(!dir.exists())
+			dir.mkdir();
+		
+		File file = new File(dir, "info.yml");
 		if(!file.exists())
 			try {
 				file.createNewFile();
@@ -169,6 +179,17 @@ public final class FileManager {
 	
 	public static void saveClans() {
 		ClanManager.get().getClans().forEach(FileManager::saveClan);
+	}
+	
+	public static void removeClan(Clan clan) {
+		File dir = new File(clanDir, clan.getId());
+		if(!dir.exists() || dir.isFile())
+			return;
+		try {
+			FileUtils.deleteDirectory(dir);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 }

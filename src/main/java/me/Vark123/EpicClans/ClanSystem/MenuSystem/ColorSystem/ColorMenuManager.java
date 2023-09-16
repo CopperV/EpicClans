@@ -1,4 +1,4 @@
-package me.Vark123.EpicClans.ClanSystem.ColorSystem;
+package me.Vark123.EpicClans.ClanSystem.MenuSystem.ColorSystem;
 
 import java.util.Arrays;
 

@@ -3,17 +3,15 @@ package me.Vark123.EpicClans.ClanSystem.Commands.Impl;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.bukkit.entity.Player;
 
-import me.Vark123.EpicClans.ClanSystem.Clan;
 import me.Vark123.EpicClans.ClanSystem.ClanPermission;
 import me.Vark123.EpicClans.ClanSystem.Commands.AClanCommand;
-import me.Vark123.EpicClans.ClanSystem.MenuSystem.ColorSystem.ColorMenuManager;
-import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
+import me.Vark123.EpicClans.ClanSystem.MenuSystem.RemoveSystem.ClanRemoveMenuManager;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
 
-public class ClanColorCommand extends AClanCommand {
+public class ClanRemoveCommand extends AClanCommand {
 
-	public ClanColorCommand() {
-		super("color", new String[]{"kolor"});
+	public ClanRemoveCommand() {
+		super("remove", new String[]{"usun"});
 	}
 
 	@Override
@@ -30,15 +28,13 @@ public class ClanColorCommand extends AClanCommand {
 
 	@Override
 	public boolean useCommand(Player sender, String... args) {
-		ClanPlayer cPlayer = PlayerManager.get().getByUID(sender.getUniqueId()).get();
-		Clan clan = cPlayer.getClan().get();
-		ColorMenuManager.get().openMenu(sender, clan);
+		ClanRemoveMenuManager.get().openMenu(sender);
 		return true;
 	}
 
 	@Override
 	public void showCorrectUsage(Player sender) {
-		sender.sendMessage("  §b/klan kolor §7- Zmien kolor swojego klanu");
+		sender.sendMessage("  §b/klan usun §7- Usun swoj klan");
 	}
 
 }

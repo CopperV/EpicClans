@@ -1,4 +1,4 @@
-package me.Vark123.EpicClans.ClanSystem.TreasurySystem;
+package me.Vark123.EpicClans.ClanSystem.MenuSystem.TreasurySystem;
 
 import java.util.Arrays;
 
@@ -16,11 +16,14 @@ import io.github.rysefoxx.inventory.plugin.enums.InventoryOpenerType;
 import io.github.rysefoxx.inventory.plugin.pagination.RyseInventory;
 import lombok.AccessLevel;
 import lombok.Getter;
+import me.Vark123.EpicClans.Config;
 import me.Vark123.EpicClans.Main;
 import me.Vark123.EpicClans.ClanSystem.Clan;
 import me.Vark123.EpicClans.ClanSystem.ClanTreasury;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
+import me.Vark123.EpicRPG.Players.RpgPlayer;
+import me.Vark123.EpicRPG.Players.Components.RpgVault;
 
 @Getter
 public final class TreasuryMenuManager {
@@ -210,26 +213,53 @@ public final class TreasuryMenuManager {
 					Clan clan = cPlayer.getClan().get();
 					ClanTreasury treasury = clan.getTreasury();
 					
-					Integer amount = Integer.parseInt(text);
+					int amount = Integer.parseInt(text);
 					if(amount < 0)
 						return Arrays.asList();
 					
+					RpgPlayer rpg = me.Vark123.EpicRPG.Players.PlayerManager.getInstance().getRpgPlayer(player);
+					RpgVault vault = rpg.getVault();
 					switch(result.getType()) {
 						case GOLD_NUGGET:
-							treasury.setMoney(treasury.getMoney()+Double.parseDouble(text));
-							clan.broadcastMessage("§7§o"+player.getName()+" §bwplacil §e§o"+amount+"$ §bdo skarbca");
+							double toPay = Double.parseDouble(text);
+							if(!vault.hasEnoughMoney(toPay)) {
+								player.sendMessage("§7["+Config.get().getPrefix()+"§7] §bNie posiadasz wystarczajaco pieniedzy do wplaty "+String.format("%.2f", toPay)+"$");
+								return Arrays.asList();
+							}
+							vault.removeMoney(toPay);
+							treasury.setMoney(treasury.getMoney()+toPay);
+							clan.broadcastMessage("§7§o"+player.getName()+" §bwplacil §e§o"+String.format("%.2f", toPay)+"$ §bdo skarbca");
+							clan.getLogger().logMessage(player.getName()+" wplacil "+String.format("%.2f", toPay)+"$ do skarbca");
 							break;
 						case GHAST_TEAR:
+							if(!vault.hasEnoughStygia(amount)) {
+								player.sendMessage("§7["+Config.get().getPrefix()+"§7] §bNie posiadasz wystarczajaco stygii do wplaty "+amount);
+								return Arrays.asList();
+							}
+							vault.removeStygia(amount);
 							treasury.setStygia(treasury.getStygia()+amount);
 							clan.broadcastMessage("§7§o"+player.getName()+" §bwplacil §3§o"+amount+" §bstygii do skarbca");
+							clan.getLogger().logMessage(player.getName()+" wplacil "+amount+" stygii do skarbca");
 							break;
 						case REDSTONE:
+							if(!vault.hasEnoughDragonCoins(amount)) {
+								player.sendMessage("§7["+Config.get().getPrefix()+"§7] §bNie posiadasz wystarczajaco smoczych monet do wplaty "+amount);
+								return Arrays.asList();
+							}
+							vault.removeDragonCoins(amount);
 							treasury.setCoins(treasury.getCoins()+amount);
 							clan.broadcastMessage("§7§o"+player.getName()+" §bwplacil §c§o"+amount+" §bsmoczych monet do skarbca");
+							clan.getLogger().logMessage(player.getName()+" wplacil "+amount+" smoczych monet do skarbca");
 							break;
 						case LAPIS_LAZULI:
+							if(!vault.hasEnoughBrylkiRudy(amount)) {
+								player.sendMessage("§7["+Config.get().getPrefix()+"§7] §bNie posiadasz wystarczajaco brylek rudy do wplaty "+amount);
+								return Arrays.asList();
+							}
+							vault.removeBrylkiRudy(amount);
 							treasury.setRuda(treasury.getRuda()+amount);
 							clan.broadcastMessage("§7§o"+player.getName()+" §bwplacil §9§o"+amount+" §bbrylek rudy do skarbca");
+							clan.getLogger().logMessage(player.getName()+" wplacil "+amount+" brylek rudy do skarbca");
 							break;
 						default:
 							return Arrays.asList();

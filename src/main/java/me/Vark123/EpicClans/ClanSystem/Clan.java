@@ -13,6 +13,7 @@ import lombok.Getter;
 import lombok.Setter;
 import me.Vark123.EpicClans.Config;
 import me.Vark123.EpicClans.ClanSystem.Events.ClanChatEvent;
+import me.Vark123.EpicClans.ClanSystem.LogSystem.ClanLogger;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import net.md_5.bungee.api.ChatColor;
 
@@ -26,6 +27,7 @@ public class Clan {
 	@Setter
 	private String color;
 	private ClanTreasury treasury;
+	private ClanLogger logger;
 	
 	private Collection<ClanRole> roles;
 	private Map<ClanPlayer, ClanRole> members;

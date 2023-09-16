@@ -76,6 +76,12 @@
 			<version>2.0.1</version>
 		</dependency>
 		<dependency>
+			<groupId>me.Vark123.ArcholosRPG</groupId>
+			<artifactId>EpicParty</artifactId>
+			<scope>provided</scope>
+			<version>1.0.1</version>
+		</dependency>
+		<dependency>
 			<groupId>CalendarEvents</groupId>
 			<artifactId>CalendarEvents</artifactId>
 			<scope>system</scope>

@@ -85,6 +85,7 @@ public class ClanPlayer {
 		p.sendMessage("§7["+Config.get().getPrefix()+"§7] §bZaprosiles §7§o"+p2.getName()+" §bdo klanu!");
 		
 		Bukkit.getLogger().log(Level.INFO, "["+ChatColor.stripColor(Config.get().getPrefix())+"] "+p.getName()+" send clan invitation ["+clan.getId()+"] to "+p2.getName());
+		clan.getLogger().logMessage(p.getName()+" zaprosil "+p2.getName()+" do klanu");
 	}
 	
 	public void cancelInvitation(BukkitTask task) {

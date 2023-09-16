@@ -1,4 +1,4 @@
-package me.Vark123.EpicClans.ClanSystem.TreasurySystem;
+package me.Vark123.EpicClans.ClanSystem.MenuSystem.TreasurySystem;
 
 import java.util.function.Consumer;
 
