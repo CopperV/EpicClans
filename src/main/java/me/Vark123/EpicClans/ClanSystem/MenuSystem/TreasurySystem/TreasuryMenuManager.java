@@ -227,7 +227,7 @@ public final class TreasuryMenuManager {
 								return Arrays.asList();
 							}
 							vault.removeMoney(toPay);
-							treasury.setMoney(treasury.getMoney()+toPay);
+							treasury.addMoney(toPay);
 							clan.broadcastMessage("§7§o"+player.getName()+" §bwplacil §e§o"+String.format("%.2f", toPay)+"$ §bdo skarbca");
 							clan.getLogger().logMessage(player.getName()+" wplacil "+String.format("%.2f", toPay)+"$ do skarbca");
 							break;
@@ -237,7 +237,7 @@ public final class TreasuryMenuManager {
 								return Arrays.asList();
 							}
 							vault.removeStygia(amount);
-							treasury.setStygia(treasury.getStygia()+amount);
+							treasury.addStygia(amount);
 							clan.broadcastMessage("§7§o"+player.getName()+" §bwplacil §3§o"+amount+" §bstygii do skarbca");
 							clan.getLogger().logMessage(player.getName()+" wplacil "+amount+" stygii do skarbca");
 							break;
@@ -247,7 +247,7 @@ public final class TreasuryMenuManager {
 								return Arrays.asList();
 							}
 							vault.removeDragonCoins(amount);
-							treasury.setCoins(treasury.getCoins()+amount);
+							treasury.addCoins(amount);
 							clan.broadcastMessage("§7§o"+player.getName()+" §bwplacil §c§o"+amount+" §bsmoczych monet do skarbca");
 							clan.getLogger().logMessage(player.getName()+" wplacil "+amount+" smoczych monet do skarbca");
 							break;
@@ -257,7 +257,7 @@ public final class TreasuryMenuManager {
 								return Arrays.asList();
 							}
 							vault.removeBrylkiRudy(amount);
-							treasury.setRuda(treasury.getRuda()+amount);
+							treasury.addRuda(amount);
 							clan.broadcastMessage("§7§o"+player.getName()+" §bwplacil §9§o"+amount+" §bbrylek rudy do skarbca");
 							clan.getLogger().logMessage(player.getName()+" wplacil "+amount+" brylek rudy do skarbca");
 							break;

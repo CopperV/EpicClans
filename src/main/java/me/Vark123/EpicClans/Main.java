@@ -1,5 +1,6 @@
 package me.Vark123.EpicClans;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.rysefoxx.inventory.plugin.pagination.InventoryManager;
@@ -7,6 +8,8 @@ import lombok.Getter;
 import me.Vark123.EpicClans.ClanSystem.ClanManager;
 import me.Vark123.EpicClans.Placeholders.ClanPlaceholders;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
+import me.nikl.calendarevents.CalendarEvents;
+import me.nikl.calendarevents.CalendarEventsApi;
 
 @Getter
 public class Main extends JavaPlugin {
@@ -16,6 +19,8 @@ public class Main extends JavaPlugin {
 
 	private InventoryManager invManager;
 	private PlaceholderExpansion playerPlaceholders;
+	
+	private CalendarEventsApi calendar;
 	
 	@Override
 	public void onEnable() {
@@ -31,6 +36,9 @@ public class Main extends JavaPlugin {
 		
 		playerPlaceholders = new ClanPlaceholders();
 		playerPlaceholders.register();
+		
+		CalendarEvents calend = (CalendarEvents) Bukkit.getPluginManager().getPlugin("CalendarEvents");
+		calendar = calend.getApi();
 		
 		EpicClansApi.get();
 	}

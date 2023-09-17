@@ -1,6 +1,5 @@
 package me.Vark123.EpicClans.ClanSystem.MenuSystem.PromoteSystem;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -90,7 +89,14 @@ public class PromoteMenuManager {
 							SkullMeta im = (SkullMeta) it.getItemMeta();
 							im.setOwningPlayer(target);
 							im.setDisplayName("§b"+target.getName());
-							im.setLore(Arrays.asList(" ","  §4§l» §7Obecna ranga: §r"+targetRole.getDisplay()));
+							List<String> lore = new LinkedList<>();
+							lore.add(" ");
+							lore.add("§4§l» §7Obecna ranga: §r"+targetRole.getDisplay());
+							lore.add("§b§nUPRAWNIENIA");
+							lore.addAll(targetRole.getPermissions().stream()
+									.map(perm -> "  §4§l» §7"+perm.getDisplay())
+									.collect(Collectors.toList()));
+							im.setLore(lore);
 							it.setItemMeta(im);
 							
 							NBTItem nbt = new NBTItem(it);
@@ -126,7 +132,14 @@ public class PromoteMenuManager {
 					SkullMeta im = (SkullMeta) head.getItemMeta();
 					im.setOwningPlayer(target);
 					im.setDisplayName("§b"+target.getName());
-					im.setLore(Arrays.asList(" ","  §4§l» §7Obecna ranga: §r"+oldRole.getDisplay()));
+					List<String> lore = new LinkedList<>();
+					lore.add(" ");
+					lore.add("§4§l» §7Obecna ranga: §r"+oldRole.getDisplay());
+					lore.add("§b§nUPRAWNIENIA");
+					lore.addAll(oldRole.getPermissions().stream()
+							.map(perm -> "  §4§l» §7"+perm.getDisplay())
+							.collect(Collectors.toList()));
+					im.setLore(lore);
 					head.setItemMeta(im);
 					
 					NBTItem nbt = new NBTItem(head);

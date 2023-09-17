@@ -20,6 +20,7 @@ import me.Vark123.EpicClans.ClanSystem.Events.ClanCreateEvent;
 import me.Vark123.EpicClans.ClanSystem.Events.ClanEvent;
 import me.Vark123.EpicClans.ClanSystem.Events.ClanJoinEvent;
 import me.Vark123.EpicClans.ClanSystem.Events.ClanKickEvent;
+import me.Vark123.EpicClans.ClanSystem.Events.ClanLeaderChangeEvent;
 import me.Vark123.EpicClans.ClanSystem.Events.ClanLeaveEvent;
 import me.Vark123.EpicClans.ClanSystem.Events.ClanRemoveEvent;
 import me.Vark123.EpicClans.ClanSystem.LogSystem.ClanLogger;
@@ -218,8 +219,34 @@ public final class ClanManager {
 		p.getPlayer().sendMessage("§7["+Config.get().getPrefix()+"§7] §bOpusciles klan §r"+clan.getColor()+clan.getId());
 		clan.broadcastMessage("§7§o"+p.getName()+" §bopuscil klan");
 
-		Bukkit.getLogger().log(Level.INFO, "["+ChatColor.stripColor(Config.get().getPrefix())+"] "+p.getName()+" has lef clan "+clan.getId());
+		Bukkit.getLogger().log(Level.INFO, "["+ChatColor.stripColor(Config.get().getPrefix())+"] "+p.getName()+" has left clan "+clan.getId());
 		clan.getLogger().logMessage(p.getName()+" opuscil klan");
+		return true;
+	}
+	
+	public boolean changeClanLeader(Clan clan, ClanPlayer oldLeader, ClanPlayer newLeader) {
+		Player p = oldLeader.toBukkitPlayer().getPlayer();
+		
+		ClanEvent event = new ClanLeaderChangeEvent(clan, oldLeader, newLeader);
+		Bukkit.getPluginManager().callEvent(event);
+		if(event.isCancelled()) {
+			p.sendMessage("§7["+Config.get().getPrefix()+"§7] §bNie mozesz zmienic lidera klanu na klanu §7§o"+newLeader.toBukkitPlayer().getName());
+			if(event.getCancelMessage() != null && !event.getCancelMessage().isEmpty()) {
+				p.sendMessage("§bPowod: §r"+event.getCancelMessage());
+			}
+			return false;
+		}
+		
+		ClanRole leader = ClanManager.get().getBaseRoles()
+				.stream().filter(_role -> _role.getId().equals("leader")).findAny().get();
+		ClanRole member = ClanManager.get().getBaseRoles()
+				.stream().filter(_role -> _role.getId().equals("member")).findAny().get();
+		clan.getMembers().put(oldLeader, member);
+		clan.getMembers().put(newLeader, leader);
+		clan.broadcastMessage("§7§o"+p.getName()+" §bmianowal §7§o"+newLeader.toBukkitPlayer().getName()+" §bjako nowego lidera klanu!");
+
+		Bukkit.getLogger().log(Level.INFO, "["+ChatColor.stripColor(Config.get().getPrefix())+"] "+p.getName()+" has changed clan leader ["+clan.getId()+"] to "+newLeader.toBukkitPlayer().getName());
+		clan.getLogger().logMessage(p.getName()+" mianowal "+newLeader.toBukkitPlayer().getName()+" jako nowego lidera klanu!");
 		return true;
 	}
 	

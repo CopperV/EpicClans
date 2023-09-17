@@ -23,6 +23,16 @@ import me.Vark123.EpicClans.ClanSystem.ClanPermission;
 import me.Vark123.EpicClans.ClanSystem.ClanRole;
 import me.Vark123.EpicClans.ClanSystem.ClanTreasury;
 import me.Vark123.EpicClans.ClanSystem.LogSystem.ClanLogger;
+import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.ClanUpgrade;
+import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradeRequirements;
+import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesManager;
+import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesImpl.AttackBoostUpgrade;
+import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesImpl.ClanRotationUpgrade;
+import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesImpl.ClanSizeUpgrade;
+import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesImpl.ClanWarehouseUpgrade;
+import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesImpl.DefenseBoostUpgrade;
+import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesImpl.ExpBoostUpgrade;
+import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesImpl.ResourceGeneratorUpgrade;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
 
@@ -38,11 +48,69 @@ public final class FileManager {
 			Main.getInst().getDataFolder().mkdir();
 		
 		Main.getInst().saveResource("config.yml", false);
+		Main.getInst().saveResource("clan-upgrades.yml", false);
 		Config.get().init();
 		
 		if(!clanDir.exists())
 			clanDir.mkdir();
+		loadClanUpgrades();
 		loadClans();
+	}
+	
+	private static void loadClanUpgrades() {
+		File file = new File(Main.getInst().getDataFolder(), "clan-upgrades.yml");
+		if(!file.exists())
+			return;
+		YamlConfiguration fYml = YamlConfiguration.loadConfiguration(file);
+		fYml.getKeys(false).stream().forEach(key -> {
+			Collection<UpgradeRequirements> requirements = new ArrayList<>();
+			
+			ConfigurationSection upgradeSection = fYml.getConfigurationSection(key);
+			upgradeSection.getKeys(false).stream().forEach(strLevel -> {
+				ConfigurationSection levelSection = upgradeSection.getConfigurationSection(strLevel);
+				
+				int level = levelSection.getInt("level", 0);
+				double balance = levelSection.getDouble("balance", 0);
+				int stygia = levelSection.getInt("stygia", 0);
+				int coins = levelSection.getInt("coins", 0);
+				int brylki = levelSection.getInt("brylki", 0);
+				int pr = levelSection.getInt("pr", 0);
+				
+				UpgradeRequirements req = UpgradeRequirements.builder()
+						.level(level)
+						.money(balance)
+						.stygia(stygia)
+						.coins(coins)
+						.ruda(brylki)
+						.pr(pr)
+						.build();
+				requirements.add(req);
+			});
+			
+			switch(key.toLowerCase()) {
+				case "exp":
+					UpgradesManager.get().getClanUpgrades().add(new ExpBoostUpgrade(requirements));
+					break;
+				case "attack":
+					UpgradesManager.get().getClanUpgrades().add(new AttackBoostUpgrade(requirements));
+					break;
+				case "defense":
+					UpgradesManager.get().getClanUpgrades().add(new DefenseBoostUpgrade(requirements));
+					break;
+				case "players":
+					UpgradesManager.get().getClanUpgrades().add(new ClanSizeUpgrade(requirements));
+					break;
+				case "generator":
+					UpgradesManager.get().getClanUpgrades().add(new ResourceGeneratorUpgrade(requirements));
+					break;
+				case "rotations":
+					UpgradesManager.get().getClanUpgrades().add(new ClanRotationUpgrade(requirements));
+					break;
+				case "warehouse":
+					UpgradesManager.get().getClanUpgrades().add(new ClanWarehouseUpgrade(requirements));
+					break;
+			}
+		});
 	}
 	
 	private static void loadClans() {
@@ -104,6 +172,31 @@ public final class FileManager {
 						.pr(pr)
 						.build();
 				
+				Collection<ClanUpgrade> upgrades = new ArrayList<>();
+				ConfigurationSection upgradeSection = fYml.getConfigurationSection("upgrades");
+				if(upgradeSection != null) {
+					UpgradesManager.get().getClanUpgrades().stream()
+						.map(upgrade -> upgrade.getId())
+						.forEach(upgradeId -> {
+							int level = upgradeSection.getInt(upgradeId, 0);
+							ClanUpgrade upgrade = ClanUpgrade.builder()
+									.id(upgradeId)
+									.level(level)
+									.build();
+							upgrades.add(upgrade);
+						});
+				} else {
+					UpgradesManager.get().getClanUpgrades().stream()
+						.map(upgrade -> upgrade.getId())
+						.forEach(upgradeId -> {
+							ClanUpgrade upgrade = ClanUpgrade.builder()
+									.id(upgradeId)
+									.level(0)
+									.build();
+							upgrades.add(upgrade);
+						});
+				}
+				
 				Clan clan = Clan.builder()
 						.id(id)
 						.name(display)
@@ -111,6 +204,7 @@ public final class FileManager {
 						.roles(roles)
 						.members(members)
 						.treasury(treasury)
+						.upgrades(upgrades)
 						.logger(new ClanLogger(dir))
 						.build();
 				ClanManager.get().registerClan(clan);
@@ -149,6 +243,7 @@ public final class FileManager {
 		
 		fYml.set("roles", null);
 		fYml.set("members", null);
+		fYml.set("upgrades", null);
 		
 		clan.getRoles().stream()
 			.filter(role -> !ClanManager.get().getBaseRoles().contains(role))
@@ -169,6 +264,8 @@ public final class FileManager {
 			fYml.set("members."+uid+".uid", uid);
 			fYml.set("members."+uid+".role", role.getId());
 		});
+		
+		clan.getUpgrades().forEach(upgrade -> fYml.set("upgrades."+upgrade.getId(), upgrade.getLevel()));
 		
 		try {
 			fYml.save(file);
