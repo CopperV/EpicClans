@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
@@ -84,6 +85,7 @@ public final class ClanManager {
 				.roles(baseRoles)
 				.members(members)
 				.upgrades(new ArrayList<>())
+				.completedAchievements(new LinkedList<>())
 				.logger(new ClanLogger(id))
 				.build();
 		

@@ -3,6 +3,15 @@ package me.Vark123.EpicClans;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventPriority;
 
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.Listeners.ClanKickListener;
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.Listeners.ClanLeaveListener;
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.Listeners.ClanRemoveListener;
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.Listeners.DungeonBossKillListener;
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.Listeners.DungeonPassListener;
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.Listeners.PartyCreateListener;
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.Listeners.PartyJoinListener;
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.Listeners.PartyRemoveListener;
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.Listeners.PlayerDisconnectListener;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.GameManager;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.BossFight.BossFightGame;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.BossFight.Listeners.BossDeathListener;
@@ -10,6 +19,7 @@ import me.Vark123.EpicClans.ClanSystem.EventSystem.BossFight.Listeners.BossDespa
 import me.Vark123.EpicClans.ClanSystem.EventSystem.BossFight.Listeners.BossFightModifier;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.Listeners.GameRecordingStartListener;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.Listeners.GameStartListener;
+import me.Vark123.EpicClans.ClanSystem.EventSystem.MobArena.MobArenaGame;
 import me.Vark123.EpicClans.ClanSystem.ResourceGeneratorSystem.ResourceGeneratorListener;
 import me.Vark123.EpicClans.PlayerSystem.Listeners.PlayerClanChatSendListener;
 import me.Vark123.EpicClans.PlayerSystem.Listeners.PlayerJoinListener;
@@ -36,8 +46,19 @@ public final class ListenerManager {
 		Bukkit.getPluginManager().registerEvents(new BossDeathListener(), inst);
 		Bukkit.getPluginManager().registerEvents(new BossDespawnListener(), inst);
 		Bukkit.getPluginManager().registerEvents(new PlayerRespTaskMoveListener(), inst);
+
+		Bukkit.getPluginManager().registerEvents(new ClanKickListener(), inst);
+		Bukkit.getPluginManager().registerEvents(new ClanLeaveListener(), inst);
+		Bukkit.getPluginManager().registerEvents(new ClanRemoveListener(), inst);
+		Bukkit.getPluginManager().registerEvents(new PartyCreateListener(), inst);
+		Bukkit.getPluginManager().registerEvents(new PartyJoinListener(), inst);
+		Bukkit.getPluginManager().registerEvents(new PartyRemoveListener(), inst);
+		Bukkit.getPluginManager().registerEvents(new PlayerDisconnectListener(), inst);
+
+		Bukkit.getPluginManager().registerEvents(new DungeonBossKillListener(), inst);
+		Bukkit.getPluginManager().registerEvents(new DungeonPassListener(), inst);
 		
-//		GameManager.get().registerGame(new MobArenaGame());
+		GameManager.get().registerGame(new MobArenaGame());
 		GameManager.get().registerGame(new BossFightGame());
 
 		DamageModifierManager.getInstance().registerModifier(new BossFightModifier(), EventPriority.MONITOR);
@@ -48,10 +69,10 @@ public final class ListenerManager {
 		calendar.addEvent("clan_resource_generator", "monday", "00:05");
 		if(calendar.isRegisteredEvent("clan_event_prepare"))
 			calendar.removeEvent("clan_event_prepare");
-		calendar.addEvent("clan_event_prepare", "every day", "18:07");
+		calendar.addEvent("clan_event_prepare", "every day", "17:30");
 		if(calendar.isRegisteredEvent("clan_event"))
 			calendar.removeEvent("clan_event");
-		calendar.addEvent("clan_event", "every day", "18:10");
+		calendar.addEvent("clan_event", "every day", "18:00");
 	}
 	
 }

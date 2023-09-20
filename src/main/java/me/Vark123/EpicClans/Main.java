@@ -7,6 +7,8 @@ import io.github.rysefoxx.inventory.plugin.pagination.InventoryManager;
 import lombok.Getter;
 import me.Vark123.EpicClans.ClanSystem.ClanManager;
 import me.Vark123.EpicClans.Placeholders.ClanPlaceholders;
+import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
+import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import me.nikl.calendarevents.CalendarEvents;
 import me.nikl.calendarevents.CalendarEventsApi;
@@ -41,6 +43,14 @@ public class Main extends JavaPlugin {
 		DatabaseManager.init();
 		
 		EpicClansApi.get();
+		
+		Bukkit.getOnlinePlayers().stream()
+			.map(p -> p.getUniqueId())
+			.filter(uid -> PlayerManager.get().getByUID(uid).isEmpty())
+			.forEach(uid -> {
+				ClanPlayer cPlayer = new ClanPlayer(uid);
+				PlayerManager.get().registerPlayer(cPlayer);
+			});
 	}
 
 	@Override
@@ -49,6 +59,7 @@ public class Main extends JavaPlugin {
 		
 		FileManager.saveClans();
 		ClanManager.get().getClans().clear();
+		PlayerManager.get().getPlayers().clear();
 	}
 	
 }

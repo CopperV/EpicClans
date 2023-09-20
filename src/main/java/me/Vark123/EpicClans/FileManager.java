@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.EnumUtils;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -22,6 +23,10 @@ import me.Vark123.EpicClans.ClanSystem.ClanManager;
 import me.Vark123.EpicClans.ClanSystem.ClanPermission;
 import me.Vark123.EpicClans.ClanSystem.ClanRole;
 import me.Vark123.EpicClans.ClanSystem.ClanTreasury;
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.AchievementManager;
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.AchievementReward;
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.AchievementType;
+import me.Vark123.EpicClans.ClanSystem.AchievementSystem.ClanAchievement;
 import me.Vark123.EpicClans.ClanSystem.LogSystem.ClanLogger;
 import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.ClanUpgrade;
 import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradeRequirements;
@@ -51,12 +56,64 @@ public final class FileManager {
 		Main.getInst().saveResource("clan-upgrades.yml", false);
 		Main.getInst().saveResource("mobarena.yml", false);
 		Main.getInst().saveResource("bossfight.yml", false);
+		Main.getInst().saveResource("osiagniecia.yml", false);
 		Config.get().init();
 		
 		if(!clanDir.exists())
 			clanDir.mkdir();
+		loadAchievements();
 		loadClanUpgrades();
 		loadClans();
+	}
+	
+	private static void loadAchievements() {
+		File file = new File(Main.getInst().getDataFolder(), "osiagniecia.yml");
+		if(!file.exists())
+			return;
+		YamlConfiguration fYml = YamlConfiguration.loadConfiguration(file);
+		ConfigurationSection achievementsSection = fYml.getConfigurationSection("osiagniecia");
+		achievementsSection.getKeys(false).stream()
+			.forEach(key -> {
+				ConfigurationSection achievementSection = achievementsSection.getConfigurationSection(key);
+				
+				String id = achievementSection.getString("id");
+				AchievementType type = AchievementType.valueOf(achievementSection.getString("type").toUpperCase());
+				String target = ChatColor.translateAlternateColorCodes('&', achievementSection.getString("target"));
+				String display = ChatColor.translateAlternateColorCodes('&', achievementSection.getString("target"));
+				List<String> lore = achievementSection.getStringList("lore").stream()
+						.map(line -> ChatColor.translateAlternateColorCodes('&', line))
+						.collect(Collectors.toList());
+				String difficulty = achievementSection.getString("difficulty");
+				
+				ConfigurationSection rewardSection = achievementSection.getConfigurationSection("reward");
+				double money = 0;
+				int stygia = 0, coins = 0, brylki = 0, pr = 0;
+				if(rewardSection != null) {
+					money = rewardSection.getDouble("money");
+					stygia = rewardSection.getInt("stygia");
+					coins = rewardSection.getInt("coins");
+					brylki = rewardSection.getInt("brylki");
+					pr = rewardSection.getInt("pr");
+				}
+				
+				ClanAchievement achievement = ClanAchievement.builder()
+						.id(id)
+						.type(type)
+						.target(target)
+						.display(display)
+						.lore(lore)
+						.difficulty(difficulty)
+						.reward(AchievementReward.builder()
+								.money(money)
+								.stygia(stygia)
+								.coins(coins)
+								.brylki(brylki)
+								.pr(pr)
+								.build())
+						.build();
+				AchievementManager.get().registerAchievement(achievement);
+			});
+		AchievementManager.get().getAchievements().sort((achievement1, achievement2) -> achievement2.getId().compareTo(achievement1.getId()));
 	}
 	
 	private static void loadClanUpgrades() {
@@ -174,6 +231,8 @@ public final class FileManager {
 						.pr(pr)
 						.build();
 				
+				List<String> achievements = fYml.getStringList("achievements");
+				
 				Collection<ClanUpgrade> upgrades = new ArrayList<>();
 				ConfigurationSection upgradeSection = fYml.getConfigurationSection("upgrades");
 				if(upgradeSection != null) {
@@ -207,6 +266,7 @@ public final class FileManager {
 						.members(members)
 						.treasury(treasury)
 						.upgrades(upgrades)
+						.completedAchievements(achievements)
 						.logger(new ClanLogger(dir))
 						.build();
 				ClanManager.get().registerClan(clan);
@@ -268,6 +328,8 @@ public final class FileManager {
 		});
 		
 		clan.getUpgrades().forEach(upgrade -> fYml.set("upgrades."+upgrade.getId(), upgrade.getLevel()));
+		
+		fYml.set("achievements", clan.getCompletedAchievements());
 		
 		try {
 			fYml.save(file);

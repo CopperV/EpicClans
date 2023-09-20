@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 
 import me.Vark123.EpicClans.ClanSystem.Commands.BaseClanCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.ClanCommandManager;
+import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanAchievementCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanChatCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanColorCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanCreateCommand;
@@ -54,6 +55,7 @@ public final class CommandManager {
 		ClanCommandManager.get().registerSubcommand(new ClanSignCommand());
 		ClanCommandManager.get().registerSubcommand(new ClanUnsignCommand());
 		ClanCommandManager.get().registerSubcommand(new ClanRespCommand());
+		ClanCommandManager.get().registerSubcommand(new ClanAchievementCommand());
 	}
 	
 }

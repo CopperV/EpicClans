@@ -30,6 +30,7 @@ public class Clan {
 	private ClanTreasury treasury;
 	private ClanLogger logger;
 	
+	private Collection<String> completedAchievements;
 	private Collection<ClanUpgrade> upgrades;
 	
 	private Collection<ClanRole> roles;
