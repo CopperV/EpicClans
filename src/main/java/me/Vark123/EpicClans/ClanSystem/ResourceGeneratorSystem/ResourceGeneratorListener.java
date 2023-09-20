@@ -67,7 +67,7 @@ public class ResourceGeneratorListener implements Listener {
 											clan.getLogger().logMessage("Generator surowcow dodal "+generator.getBrylki()+" brylek rudy do skarbca klanu");
 										}
 										if(generator.getPr() > 0) {
-											treasury.addPr(generator.getMoney());
+											treasury.addPr(generator.getPr());
 											clan.broadcastMessage("§bGenerator surowcow dodal §6§o"+generator.getPr()+" punktow rozwoju §bdo skarbca klanu");
 											Bukkit.getLogger().log(Level.INFO, "["+ChatColor.stripColor(Config.get().getPrefix())+"] "
 													+ "Resource generator has added "+generator.getPr()+" dev poinst to clan "+clan.getId()+" treasury");

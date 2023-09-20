@@ -83,6 +83,7 @@ public final class ClanManager {
 				.treasury(ClanTreasury.builder().build())
 				.roles(baseRoles)
 				.members(members)
+				.upgrades(new ArrayList<>())
 				.logger(new ClanLogger(id))
 				.build();
 		

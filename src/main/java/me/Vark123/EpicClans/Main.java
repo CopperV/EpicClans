@@ -25,11 +25,6 @@ public class Main extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		inst = this;
-		
-		CommandManager.setExecutors();
-		ListenerManager.registerListeners();
-		FileManager.init();
-		DatabaseManager.init();
 
 		invManager = new InventoryManager(inst);
 		invManager.invoke();
@@ -39,6 +34,11 @@ public class Main extends JavaPlugin {
 		
 		CalendarEvents calend = (CalendarEvents) Bukkit.getPluginManager().getPlugin("CalendarEvents");
 		calendar = calend.getApi();
+		
+		CommandManager.setExecutors();
+		ListenerManager.registerListeners();
+		FileManager.init();
+		DatabaseManager.init();
 		
 		EpicClansApi.get();
 	}

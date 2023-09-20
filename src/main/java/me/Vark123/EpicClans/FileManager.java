@@ -49,6 +49,8 @@ public final class FileManager {
 		
 		Main.getInst().saveResource("config.yml", false);
 		Main.getInst().saveResource("clan-upgrades.yml", false);
+		Main.getInst().saveResource("mobarena.yml", false);
+		Main.getInst().saveResource("bossfight.yml", false);
 		Config.get().init();
 		
 		if(!clanDir.exists())

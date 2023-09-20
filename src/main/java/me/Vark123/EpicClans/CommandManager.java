@@ -18,8 +18,12 @@ import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanLogCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanPartyCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanPromoteCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanRemoveCommand;
+import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanRespCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanRolesCommand;
+import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanRotationCommand;
+import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanSignCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanTreasuryCommand;
+import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanUnsignCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanUpgradeCommand;
 
 public final class CommandManager {
@@ -46,6 +50,10 @@ public final class CommandManager {
 		ClanCommandManager.get().registerSubcommand(new ClanPromoteCommand());
 		ClanCommandManager.get().registerSubcommand(new ClanLeaderChangeCommand());
 		ClanCommandManager.get().registerSubcommand(new ClanUpgradeCommand());
+		ClanCommandManager.get().registerSubcommand(new ClanRotationCommand());
+		ClanCommandManager.get().registerSubcommand(new ClanSignCommand());
+		ClanCommandManager.get().registerSubcommand(new ClanUnsignCommand());
+		ClanCommandManager.get().registerSubcommand(new ClanRespCommand());
 	}
 	
 }

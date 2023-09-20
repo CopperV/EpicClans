@@ -1,0 +1,19 @@
+max_clans: 20
+world: clans_bossfight
+arena:
+  mob_spawn:
+    id: 1
+    x: -232.5
+    y: 28
+    z: 156.5
+  resp:
+    id: 1
+    x: -232.5
+    y: 28
+    z: 140.5
+  bosses:
+  - BossFight_Babadek
+  - BossFight_GMO
+  - BossFight_Garthmog
+  - BossFight_Krzyzak
+  - BossFight_Gregorius
