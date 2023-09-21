@@ -6,6 +6,7 @@ import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,6 +36,8 @@ public class Clan {
 	
 	private Collection<ClanRole> roles;
 	private Map<ClanPlayer, ClanRole> members;
+	
+	private Map<Integer, Inventory> warehouses;
 	
 	public boolean hasPermission(ClanPlayer cPlayer, ClanPermission perm) {
 		ClanRole role = members.get(cPlayer);

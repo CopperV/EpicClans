@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Optional;
@@ -13,6 +14,7 @@ import java.util.logging.Level;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 import lombok.Getter;
 import me.Vark123.EpicClans.Config;
@@ -25,6 +27,7 @@ import me.Vark123.EpicClans.ClanSystem.Events.ClanLeaderChangeEvent;
 import me.Vark123.EpicClans.ClanSystem.Events.ClanLeaveEvent;
 import me.Vark123.EpicClans.ClanSystem.Events.ClanRemoveEvent;
 import me.Vark123.EpicClans.ClanSystem.LogSystem.ClanLogger;
+import me.Vark123.EpicClans.ClanSystem.WarehouseSystem.WarehouseHolder;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
 import net.md_5.bungee.api.ChatColor;
@@ -37,6 +40,8 @@ public final class ClanManager {
 	private final Collection<Clan> clans;
 	
 	private final Collection<ClanRole> baseRoles;
+
+	private final int[] freeSlots;
 	
 	private ClanManager() {
 		clans = new HashSet<>();
@@ -52,6 +57,10 @@ public final class ClanManager {
 				Integer.MAX_VALUE,
 				false,
 				new ArrayList<>()));
+
+		freeSlots = new int[27];
+		for(int i = 0; i < freeSlots.length; ++i)
+			freeSlots[i] = i;
 	}
 	
 	public static final ClanManager get() {
@@ -86,6 +95,7 @@ public final class ClanManager {
 				.members(members)
 				.upgrades(new ArrayList<>())
 				.completedAchievements(new LinkedList<>())
+				.warehouses(generateEmptyWarehouses())
 				.logger(new ClanLogger(id))
 				.build();
 		
@@ -251,6 +261,15 @@ public final class ClanManager {
 		Bukkit.getLogger().log(Level.INFO, "["+ChatColor.stripColor(Config.get().getPrefix())+"] "+p.getName()+" has changed clan leader ["+clan.getId()+"] to "+newLeader.toBukkitPlayer().getName());
 		clan.getLogger().logMessage(p.getName()+" mianowal "+newLeader.toBukkitPlayer().getName()+" jako nowego lidera klanu!");
 		return true;
+	}
+	
+	public Map<Integer, Inventory> generateEmptyWarehouses() {
+		Map<Integer, Inventory> toReturn = new LinkedHashMap<>();
+		for(int i = 1; i < 10; ++i) {
+			Inventory inv = Bukkit.createInventory(new WarehouseHolder(i), 27, "§eMagazyn nr "+i);
+			toReturn.put(i, inv);
+		}
+		return toReturn;
 	}
 	
 }

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -13,9 +14,13 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.EnumUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
 import lombok.Getter;
 import me.Vark123.EpicClans.ClanSystem.Clan;
@@ -38,6 +43,7 @@ import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesImpl.ClanWarehouseU
 import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesImpl.DefenseBoostUpgrade;
 import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesImpl.ExpBoostUpgrade;
 import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesImpl.ResourceGeneratorUpgrade;
+import me.Vark123.EpicClans.ClanSystem.WarehouseSystem.WarehouseHolder;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
 
@@ -257,6 +263,32 @@ public final class FileManager {
 							upgrades.add(upgrade);
 						});
 				}
+
+				Map<Integer,Inventory> warehouses;
+				File warehouseDir = new File(dir, "warehouse");
+				if(!warehouseDir.exists()) {
+					warehouseDir.mkdir();
+					warehouses = ClanManager.get().generateEmptyWarehouses();
+				} else {
+					warehouses = new LinkedHashMap<>();
+					Arrays.asList(warehouseDir.listFiles()).stream()
+						.filter(file -> file.getName().endsWith(".yml"))
+						.map(YamlConfiguration::loadConfiguration)
+						.forEach(warehouseYml -> {
+							int warehouseId = warehouseYml.getInt("id");
+							Inventory inv = Bukkit.createInventory(new WarehouseHolder(warehouseId), 27, "§eMagazyn nr "+warehouseId);
+							ConfigurationSection invSection = warehouseYml.getConfigurationSection("inventory");
+							if(invSection != null)
+								invSection.getKeys(false).stream()
+									.filter(StringUtils::isNumeric)
+									.map(Integer::parseInt)
+									.forEach(i -> {
+										ItemStack it = invSection.getItemStack(""+i);
+										inv.setItem(i, it);
+									});
+							warehouses.put(warehouseId, inv);
+						});
+				}
 				
 				Clan clan = Clan.builder()
 						.id(id)
@@ -268,6 +300,7 @@ public final class FileManager {
 						.upgrades(upgrades)
 						.completedAchievements(achievements)
 						.logger(new ClanLogger(dir))
+						.warehouses(warehouses)
 						.build();
 				ClanManager.get().registerClan(clan);
 				
@@ -336,6 +369,36 @@ public final class FileManager {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		File warehouseDir = new File(dir, "warehouse");
+		if(!warehouseDir.exists())
+			warehouseDir.mkdir();
+		clan.getWarehouses().entrySet().stream()
+			.forEach(entry -> {
+				int num = entry.getKey();
+				Inventory inv = entry.getValue();
+				
+				File warehouse = new File(warehouseDir, num+".yml");
+				if(!warehouse.exists())
+					try {
+						warehouse.createNewFile();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				
+				YamlConfiguration warehouseYml = YamlConfiguration.loadConfiguration(warehouse);
+				warehouseYml.set("id", num);
+				warehouseYml.set("inventory", null);
+				for(int i = 0; i < inv.getSize(); ++i) {
+					ItemStack it = inv.getItem(i);
+					warehouseYml.set("inventory."+i, it);
+				}
+				try {
+					warehouseYml.save(warehouse);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			});
 	}
 	
 	public static void saveClans() {

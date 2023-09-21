@@ -26,6 +26,7 @@ import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanSignCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanTreasuryCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanUnsignCommand;
 import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanUpgradeCommand;
+import me.Vark123.EpicClans.ClanSystem.Commands.Impl.ClanWarehouseCommand;
 
 public final class CommandManager {
 
@@ -56,6 +57,7 @@ public final class CommandManager {
 		ClanCommandManager.get().registerSubcommand(new ClanUnsignCommand());
 		ClanCommandManager.get().registerSubcommand(new ClanRespCommand());
 		ClanCommandManager.get().registerSubcommand(new ClanAchievementCommand());
+		ClanCommandManager.get().registerSubcommand(new ClanWarehouseCommand());
 	}
 	
 }
