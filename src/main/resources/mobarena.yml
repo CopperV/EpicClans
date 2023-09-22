@@ -1,0 +1,1205 @@
+max_clans: 20
+world: clans_mobarena
+arenas:
+  '1':
+    resp:
+      id: 1
+      x: 0.5
+      y: 24
+      z: 0.5
+      mob_resps:
+        '1':
+          x: 0.5
+          y: 31
+          z: 8.5
+        '2':
+          x: 0.5
+          y: 31
+          z: -7.5
+        '3':
+          x: -24.5
+          y: 25
+          z: 0.5
+        '4':
+          x: 0.5
+          y: 25
+          z: -24.5
+        '5':
+          x: 25.5
+          y: 25
+          z: 0.5
+        '6':
+          x: 0.5
+          y: 25
+          z: 25.5
+        '7':
+          x: 0.5
+          y: 24
+          z: 0.5
+  '2':
+    resp:
+      id: 2
+      x: -150.5
+      y: 24
+      z: 0.5
+      mob_resps:
+        '1':
+          x: -150.5
+          y: 31
+          z: 8.5
+        '2':
+          x: -150.5
+          y: 31
+          z: -7.5
+        '3':
+          x: -174.5
+          y: 25
+          z: 0.5
+        '4':
+          x: -150.5
+          y: 25
+          z: -24.5
+        '5':
+          x: -125.5
+          y: 25
+          z: 0.5
+        '6':
+          x: -125.5
+          y: 25
+          z: 9.5
+        '7':
+          x: -125.5
+          y: 24
+          z: 0.5
+  '3':
+    resp:
+      id: 3
+      x: -300.5
+      y: 24
+      z: 0.5
+      mob_resps:
+        '1':
+          x: -300.5
+          y: 31
+          z: 8.5
+        '2':
+          x: -300.5
+          y: 31
+          z: -7.5
+        '3':
+          x: -324.5
+          y: 25
+          z: 0.5
+        '4':
+          x: -300.5
+          y: 25
+          z: -24.5
+        '5':
+          x: -275.5
+          y: 25
+          z: 0.5
+        '6':
+          x: -300.5
+          y: 25
+          z: 25.5
+        '7':
+          x: -300.5
+          y: 24
+          z: 0.5
+  '4':
+    resp:
+      id: 4
+      x: 150.5
+      y: 24
+      z: 0.5
+      mob_resps:
+        '1':
+          x: 150.5
+          y: 31
+          z: 8.5
+        '2':
+          x: 150.5
+          y: 31
+          z: -7.5
+        '3':
+          x: 126.5
+          y: 25
+          z: 0.5
+        '4':
+          x: 150.5
+          y: 25
+          z: -24.5
+        '5':
+          x: 175.5
+          y: 25
+          z: 0.5
+        '6':
+          x: 150.5
+          y: 25
+          z: 25.5
+        '7':
+          x: 150.5
+          y: 24
+          z: 0.5
+  '5':
+    resp:
+      id: 5
+      x: 300.5
+      y: 24
+      z: 0.5
+      mob_resps:
+        '1':
+          x: 300.5
+          y: 31
+          z: 8.5
+        '2':
+          x: 300.5
+          y: 31
+          z: -7.5
+        '3':
+          x: 276.5
+          y: 25
+          z: 0.5
+        '4':
+          x: 300.5
+          y: 25
+          z: -24.5
+        '5':
+          x: 325.5
+          y: 25
+          z: 0.5
+        '6':
+          x: 300.5
+          y: 25
+          z: 25.5
+        '7':
+          x: 300.5
+          y: 24
+          z: 0.5
+  '6':
+    resp:
+      id: 6
+      x: 0.5
+      y: 24
+      z: 150.5
+      mob_resps:
+        '1':
+          x: 0.5
+          y: 31
+          z: 158.5
+        '2':
+          x: 0.5
+          y: 31
+          z: -143.5
+        '3':
+          x: -24.5
+          y: 25
+          z: 150.5
+        '4':
+          x: 0.5
+          y: 25
+          z: 126.5
+        '5':
+          x: 25.5
+          y: 25
+          z: 150.5
+        '6':
+          x: 0.5
+          y: 25
+          z: 175.5
+        '7':
+          x: 0.5
+          y: 24
+          z: 150.5
+  '7':
+    resp:
+      id: 7
+      x: -150.5
+      y: 24
+      z: 150.5
+      mob_resps:
+        '1':
+          x: -150.5
+          y: 31
+          z: 158.5
+        '2':
+          x: -150.5
+          y: 31
+          z: -143.5
+        '3':
+          x: -174.5
+          y: 25
+          z: 150.5
+        '4':
+          x: -150.5
+          y: 25
+          z: 126.5
+        '5':
+          x: -125.5
+          y: 25
+          z: 150.5
+        '6':
+          x: -150.5
+          y: 25
+          z: 175.5
+        '7':
+          x: -150.5
+          y: 24
+          z: 150.5
+  '8':
+    resp:
+      id: 8
+      x: -300.5
+      y: 24
+      z: 150.5
+      mob_resps:
+        '1':
+          x: -300.5
+          y: 31
+          z: 158.5
+        '2':
+          x: -300.5
+          y: 31
+          z: -143.5
+        '3':
+          x: -324.5
+          y: 25
+          z: 150.5
+        '4':
+          x: -300.5
+          y: 25
+          z: 126.5
+        '5':
+          x: -275.5
+          y: 25
+          z: 150.5
+        '6':
+          x: -300.5
+          y: 25
+          z: 175.5
+        '7':
+          x: -300.5
+          y: 24
+          z: 150.5
+  '9':
+    resp:
+      id: 9
+      x: 150.5
+      y: 24
+      z: 150.5
+      mob_resps:
+        '1':
+          x: 150.5
+          y: 31
+          z: 158.5
+        '2':
+          x: 150.5
+          y: 31
+          z: 143.5
+        '3':
+          x: 126.5
+          y: 25
+          z: 150.5
+        '4':
+          x: 150.5
+          y: 25
+          z: 126.5
+        '5':
+          x: 175.5
+          y: 25
+          z: 150.5
+        '6':
+          x: 150.5
+          y: 25
+          z: 175.5
+        '7':
+          x: 150.5
+          y: 24
+          z: 150.5
+  '10':
+    resp:
+      id: 10
+      x: 300.5
+      y: 24
+      z: 150.5
+      mob_resps:
+        '1':
+          x: 300.5
+          y: 31
+          z: 158.5
+        '2':
+          x: 300.5
+          y: 31
+          z: -143.5
+        '3':
+          x: 276.5
+          y: 25
+          z: 150.5
+        '4':
+          x: 300.5
+          y: 25
+          z: 126.5
+        '5':
+          x: 325.5
+          y: 25
+          z: 150.5
+        '6':
+          x: 300.5
+          y: 25
+          z: 175.5
+        '7':
+          x: 300.5
+          y: 24
+          z: 150.5
+  '11':
+    resp:
+      id: 11
+      x: 0.5
+      y: 24
+      z: 300.5
+      mob_resps:
+        '1':
+          x: 0.5
+          y: 31
+          z: 308.5
+        '2':
+          x: 0.5
+          y: 31
+          z: 293.5
+        '3':
+          x: -24.5
+          y: 25
+          z: 300.5
+        '4':
+          x: 0.5
+          y: 25
+          z: 276.5
+        '5':
+          x: 25.5
+          y: 25
+          z: 300.5
+        '6':
+          x: 0.5
+          y: 25
+          z: 325.5
+        '7':
+          x: 0.5
+          y: 24
+          z: 300.5
+  '12':
+    resp:
+      id: 12
+      x: -150.5
+      y: 24
+      z: 300.5
+      mob_resps:
+        '1':
+          x: -150.5
+          y: 31
+          z: 308.5
+        '2':
+          x: -150.5
+          y: 31
+          z: 293.5
+        '3':
+          x: -174.5
+          y: 25
+          z: 300.5
+        '4':
+          x: -150.5
+          y: 25
+          z: 276.5
+        '5':
+          x: -125.5
+          y: 25
+          z: 300.5
+        '6':
+          x: -150.5
+          y: 25
+          z: 325.5
+        '7':
+          x: -150.5
+          y: 24
+          z: 300.5
+  '13':
+    resp:
+      id: 13
+      x: -300.5
+      y: 24
+      z: 300.5
+      mob_resps:
+        '1':
+          x: -300.5
+          y: 31
+          z: 308.5
+        '2':
+          x: -300.5
+          y: 31
+          z: 293.5
+        '3':
+          x: -324.5
+          y: 25
+          z: 300.5
+        '4':
+          x: -300.5
+          y: 25
+          z: 276.5
+        '5':
+          x: -275.5
+          y: 25
+          z: 300.5
+        '6':
+          x: -300.5
+          y: 25
+          z: 325.5
+        '7':
+          x: -300.5
+          y: 24
+          z: 300.5
+  '14':
+    resp:
+      id: 14
+      x: 150.5
+      y: 24
+      z: 300.5
+      mob_resps:
+        '1':
+          x: 150.5
+          y: 31
+          z: 308.5
+        '2':
+          x: 150.5
+          y: 31
+          z: 293.5
+        '3':
+          x: 126.5
+          y: 25
+          z: 300.5
+        '4':
+          x: 150.5
+          y: 25
+          z: 276.5
+        '5':
+          x: 175.5
+          y: 25
+          z: 300.5
+        '6':
+          x: 150.5
+          y: 25
+          z: 325.5
+        '7':
+          x: 150.5
+          y: 24
+          z: 300.5
+  '15':
+    resp:
+      id: 15
+      x: 300.5
+      y: 24
+      z: 300.5
+      mob_resps:
+        '1':
+          x: 300.5
+          y: 31
+          z: 308.5
+        '2':
+          x: 300.5
+          y: 31
+          z: 293.5
+        '3':
+          x: 276.5
+          y: 25
+          z: 300.5
+        '4':
+          x: 300.5
+          y: 25
+          z: 276.5
+        '5':
+          x: 325.5
+          y: 25
+          z: 300.5
+        '6':
+          x: 300.5
+          y: 25
+          z: 325.5
+        '7':
+          x: 300.5
+          y: 24
+          z: 300.5
+  '16':
+    resp:
+      id: 16
+      x: 0.5
+      y: 24
+      z: 450.5
+      mob_resps:
+        '1':
+          x: 0.5
+          y: 31
+          z: 458.5
+        '2':
+          x: 0.5
+          y: 31
+          z: 443.5
+        '3':
+          x: -24.5
+          y: 25
+          z: 450.5
+        '4':
+          x: 0.5
+          y: 25
+          z: 426.5
+        '5':
+          x: 25.5
+          y: 25
+          z: 450.5
+        '6':
+          x: 0.5
+          y: 25
+          z: 475.5
+        '7':
+          x: 0.5
+          y: 24
+          z: 450.5
+  '17':
+    resp:
+      id: 17
+      x: -150.5
+      y: 24
+      z: 450.5
+      mob_resps:
+        '1':
+          x: -150.5
+          y: 31
+          z: 458.5
+        '2':
+          x: -150.5
+          y: 31
+          z: 443.5
+        '3':
+          x: -174.5
+          y: 25
+          z: 450.5
+        '4':
+          x: -150.5
+          y: 25
+          z: 426.5
+        '5':
+          x: -125.5
+          y: 25
+          z: 450.5
+        '6':
+          x: -150.5
+          y: 25
+          z: 475.5
+        '7':
+          x: -150.5
+          y: 24
+          z: 450.5
+  '18':
+    resp:
+      id: 18
+      x: -300.5
+      y: 24
+      z: 450.5
+      mob_resps:
+        '1':
+          x: -300.5
+          y: 31
+          z: 458.5
+        '2':
+          x: -300.5
+          y: 31
+          z: 443.5
+        '3':
+          x: -324.5
+          y: 25
+          z: 450.5
+        '4':
+          x: -300.5
+          y: 25
+          z: 426.5
+        '5':
+          x: -275.5
+          y: 25
+          z: 450.5
+        '6':
+          x: -300.5
+          y: 25
+          z: 475.5
+        '7':
+          x: -300.5
+          y: 24
+          z: 450.5
+  '19':
+    resp:
+      id: 19
+      x: 150.5
+      y: 24
+      z: 450.5
+      mob_resps:
+        '1':
+          x: 150.5
+          y: 31
+          z: 458.5
+        '2':
+          x: 150.5
+          y: 31
+          z: 443.5
+        '3':
+          x: 126.5
+          y: 25
+          z: 450.5
+        '4':
+          x: 150.5
+          y: 25
+          z: 426.5
+        '5':
+          x: 175.5
+          y: 25
+          z: 450.5
+        '6':
+          x: 150.5
+          y: 25
+          z: 475.5
+        '7':
+          x: 150.5
+          y: 24
+          z: 450.5
+  '20':
+    resp:
+      id: 20
+      x: 300.5
+      y: 24
+      z: 450.5
+      mob_resps:
+        '1':
+          x: 300.5
+          y: 31
+          z: 458.5
+        '2':
+          x: 300.5
+          y: 31
+          z: 443.5
+        '3':
+          x: 276.5
+          y: 25
+          z: 450.5
+        '4':
+          x: 300.5
+          y: 25
+          z: 426.5
+        '5':
+          x: 325.5
+          y: 25
+          z: 450.5
+        '6':
+          x: 300.5
+          y: 25
+          z: 475.5
+        '7':
+          x: 300.5
+          y: 24
+          z: 450.5
+waves:
+  '1':
+    wave: 1
+    level: 1
+    amount: 6
+    mobs:
+    - Clan_Mob1
+  '2':
+    wave: 2
+    level: 2
+    amount: 4
+    mobs:
+    - Clan_Mob2
+  '3':
+    wave: 3
+    level: 2
+    amount: 4
+    mobs:
+    - Clan_Mob3
+  '4':
+    wave: 4
+    level: 1
+    amount: 12
+    mobs:
+    - Clan_Mob1
+    - Clan_Mob2
+    - Clan_Mob3
+  '5':
+    wave: 5
+    level: 2
+    amount: 1
+    mobs:
+    - Clan_Boss1
+  '6':
+    wave: 6
+    level: 3
+    amount: 8
+    mobs:
+    - Clan_Mob1
+  '7':
+    wave: 7
+    level: 2
+    amount: 8
+    mobs:
+    - Clan_Mob4
+  '8':
+    wave: 8
+    level: 3
+    amount: 10
+    mobs:
+    - Clan_Mob2
+    - Clan_Mob3
+  '9':
+    wave: 9
+    level: 4
+    amount: 10
+    mobs:
+    - Clan_Mob1
+    - Clan_Mob2
+    - Clan_Mob3
+    - Clan_Mob4
+  '10':
+    wave: 10
+    level: 4
+    amount: 1
+    mobs:
+    - Clan_Boss2
+  '11':
+    wave: 11
+    level: 5
+    amount: 10
+    mobs:
+    - Clan_Mob1
+    - Clan_Mob5
+  '12':
+    wave: 12
+    level: 6
+    amount: 8
+    mobs:
+    - Clan_Mob4
+  '13':
+    wave: 13
+    level: 8
+    amount: 14
+    mobs:
+    - Clan_Mob1
+  '14':
+    wave: 14
+    level: 10
+    amount: 8
+    mobs:
+    - Clan_Mob3
+  '15':
+    wave: 15
+    level: 6
+    amount: 1
+    mobs:
+    - Clan_Boss3
+  '16':
+    wave: 16
+    level: 5
+    amount: 18
+    mobs:
+    - Clan_Mob6
+  '17':
+    wave: 17
+    level: 13
+    amount: 7
+    mobs:
+    - Clan_Mob5
+  '18':
+    wave: 18
+    level: 5
+    amount: 25
+    mobs:
+    - Clan_Mob1
+  '19':
+    wave: 19
+    level: 10
+    amount: 15
+    mobs:
+    - Clan_Mob1
+    - Clan_Mob2
+    - Clan_Mob3
+    - Clan_Mob4
+    - Clan_Mob5
+    - Clan_Mob6
+  '20':
+    wave: 20
+    level: 8
+    amount: 2
+    mobs:
+    - Clan_Boss1
+  '21':
+    wave: 21
+    level: 18
+    amount: 4
+    mobs:
+    - Clan_Mob7
+  '22':
+    wave: 22
+    level: 14
+    amount: 15
+    mobs:
+    - Clan_Mob1
+    - Clan_Mob3
+    - Clan_Mob5
+  '23':
+    wave: 23
+    level: 16
+    amount: 13
+    mobs:
+    - Clan_Mob2
+  '24':
+    wave: 24
+    level: 21
+    amount: 10
+    mobs:
+    - Clan_Mob7
+    - Clan_Mob2
+  '25':
+    wave: 25
+    level: 11
+    amount: 2
+    mobs:
+    - Clan_Boss2
+  '26':
+    wave: 26
+    level: 29
+    amount: 5
+    mobs:
+    - Clan_Mob8
+  '27':
+    wave: 27
+    level: 30
+    amount: 4
+    mobs:
+    - Clan_Mob7
+  '28':
+    wave: 28
+    level: 20
+    amount: 20
+    mobs:
+    - Clan_Mob1
+  '29':
+    wave: 29
+    level: 24
+    amount: 13
+    mobs:
+    - Clan_Mob3
+    - Clan_Mob6
+    - Clan_Mob8
+  '30':
+    wave: 30
+    level: 15
+    amount: 2
+    mobs:
+    - Clan_Boss3
+  '31':
+    wave: 31
+    level: 35
+    amount: 7
+    mobs:
+    - Clan_Mob8
+    - Clan_Mob7
+  '32':
+    wave: 32
+    level: 25
+    amount: 14
+    mobs:
+    - Clan_Mob6
+  '33':
+    wave: 33
+    level: 30
+    amount: 9
+    mobs:
+    - Clan_Mob1
+    - Clan_Mob5
+  '34':
+    wave: 34
+    level: 45
+    amount: 4
+    mobs:
+    - Clan_Mob9
+  '35':
+    wave: 35
+    level: 45
+    amount: 1
+    mobs:
+    - Clan_Boss1
+  '36':
+    wave: 36
+    level: 45
+    amount: 6
+    mobs:
+    - Clan_Mob9
+  '37':
+    wave: 37
+    level: 48
+    amount: 9
+    mobs:
+    - Clan_Mob7
+  '38':
+    wave: 38
+    level: 39
+    amount: 19
+    mobs:
+    - Clan_Mob2
+    - Clan_Mob3
+  '39':
+    wave: 39
+    level: 65
+    amount: 3
+    mobs:
+    - Clan_Mob10
+  '40':
+    wave: 40
+    level: 50
+    amount: 1
+    mobs:
+    - Clan_Boss2
+  '41':
+    wave: 41
+    level: 60
+    amount: 10
+    mobs:
+    - Clan_Mob1
+  '42':
+    wave: 42
+    level: 53
+    amount: 12
+    mobs:
+    - Clan_Mob6
+    - Clan_Mob8
+    - Clan_Mob10
+  '43':
+    wave: 43
+    level: 70
+    amount: 5
+    mobs:
+    - Clan_Mob5
+  '44':
+    wave: 44
+    level: 49
+    amount: 14
+    mobs:
+    - Clan_Mob4
+  '45':
+    wave: 45
+    level: 55
+    amount: 1
+    mobs:
+    - Clan_Boss3
+  '46':
+    wave: 46
+    level: 55
+    amount: 6
+    mobs:
+    - Clan_Mob7
+  '47':
+    wave: 47
+    level: 63
+    amount: 8
+    mobs:
+    - Clan_Mob9
+    - Clan_Mob10
+  '48':
+    wave: 48
+    level: 35
+    amount: 28
+    mobs:
+    - Clan_Mob1
+  '49':
+    wave: 49
+    level: 70
+    amount: 10
+    mobs:
+    - Clan_Mob1
+    - Clan_Mob2
+    - Clan_Mob3
+    - Clan_Mob4
+    - Clan_Mob5
+    - Clan_Mob6
+    - Clan_Mob7
+    - Clan_Mob8
+    - Clan_Mob9
+    - Clan_Mob10
+  '50':
+    wave: 50
+    level: 50
+    amount: 3
+    mobs:
+    - Clan_Boss1
+    - Clan_Boss2
+    - Clan_Boss3
+  '51':
+    wave: 51
+    level: 75
+    amount: 15
+    mobs:
+    - Clan_Mob10
+  '52':
+    wave: 52
+    level: 60
+    amount: 25
+    mobs:
+    - Clan_Mob1
+    - Clan_Mob2
+    - Clan_Mob3
+    - Clan_Mob4
+  '53':
+    wave: 53
+    level: 72
+    amount: 9
+    mobs:
+    - Clan_Mob7
+    - Clan_Mob4
+  '54':
+    wave: 54
+    level: 100
+    amount: 20
+    mobs:
+    - Clan_Mob9
+  '55':
+    wave: 55
+    level: 60
+    amount: 3
+    mobs:
+    - Clan_Boss1
+  '56':
+    wave: 56
+    level: 140
+    amount: 6
+    mobs:
+    - Clan_Mob11
+  '57':
+    wave: 57
+    level: 75
+    amount: 16
+    mobs:
+    - Clan_Mob2
+    - Clan_Mob6
+  '58':
+    wave: 58
+    level: 81
+    amount: 12
+    mobs:
+    - Clan_Mob7
+  '59':
+    wave: 59
+    level: 80
+    amount: 25
+    mobs:
+    - Clan_Mob3
+    - Clan_Mob8
+  '60':
+    wave: 60
+    level: 70
+    amount: 3
+    mobs:
+    - Clan_Boss2
+  '61':
+    wave: 61
+    level: 75
+    amount: 30
+    mobs:
+    - Clan_Mob1
+    - Clan_Mob9
+  '62':
+    wave: 62
+    level: 90
+    amount: 15
+    mobs:
+    - Clan_Mob5
+    - Clan_Mob11
+  '63':
+    wave: 63
+    level: 85
+    amount: 20
+    mobs:
+    - Clan_Mob10
+    - Clan_Mob8
+    - Clan_Mob2
+    - Clan_Mob3
+  '64':
+    wave: 64
+    level: 110
+    amount: 10
+    mobs:
+    - Clan_Mob12
+  '65':
+    wave: 65
+    level: 80
+    amount: 3
+    mobs:
+    - Clan_Boss3
+  '66':
+    wave: 66
+    level: 85
+    amount: 30
+    mobs:
+    - Clan_Mob12
+    - Clan_Mob1
+  '67':
+    wave: 67
+    level: 90
+    amount: 17
+    mobs:
+    - Clan_Mob10
+    - Clan_Mob11
+    - Clan_Mob12
+  '68':
+    wave: 68
+    level: 100
+    amount: 11
+    mobs:
+    - Clan_Mob10
+  '69':
+    wave: 69
+    level: 95
+    amount: 11
+    mobs:
+    - Clan_Mob8
+  '70':
+    wave: 70
+    level: 115
+    amount: 1
+    mobs:
+    - Clan_Boss4
+  '71':
+    wave: 71
+    level: 140
+    amount: 15
+    mobs:
+    - Clan_Mob9
+  '72':
+    wave: 72
+    level: 90
+    amount: 16
+    mobs:
+    - Clan_Mob12
+  '73':
+    wave: 73
+    level: 180
+    amount: 4
+    mobs:
+    - Clan_Mob11
+  '74':
+    wave: 74
+    level: 180
+    amount: 5
+    mobs:
+    - Clan_Mob12
+  '75':
+    wave: 75
+    level: 85
+    amount: 4
+    mobs:
+    - Clan_Boss1
+    - Clan_Boss2
+    - Clan_Boss3
+    - Clan_Boss4

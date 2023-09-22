@@ -1,0 +1,1719 @@
+#
+#      stygia: 2500
+#      coins: 60000
+osiagniecia:
+  '1':
+    id: '1'
+    type: dungeon_kill
+    target: '&3&lCronnos - Pierwszy Kolos'
+    name: '&c&lZywa skala'
+    lore:
+    - ' '
+    - '&aPokonano &3&lCronnosa'
+    - '&aPierwszego Kolosa Geddona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 25000
+      brylki: 300
+  '2':
+    id: '2'
+    type: dungeon_kill
+    target: '&5&lRezan - Nadworny Mag'
+    name: '&8&lMoc Mroku i Chaosu'
+    lore:
+    - ' '
+    - '&aPokonano &5&lRezana'
+    - '&aNadwornego Maga'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 25000
+      brylki: 300
+  '3':
+    id: '3'
+    type: dungeon_kill
+    target: '&4&lArchol - Straz Geddona'
+    name: '&5&lOddany do smierci'
+    lore:
+    - ' '
+    - '&aPokonano &4&lArchola'
+    - '&aDowodce Strazy Geddona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 25000
+      brylki: 300
+  '4':
+    id: '4'
+    type: dungeon_kill
+    target: '&7&lEntity303 - Legendary Boss'
+    name: '&7&lA to dopiero poczatek...'
+    lore:
+    - ' '
+    - '&aPokonano &7&lEntity303'
+    - '&aObcego z Nowego Swiata'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 65000
+      brylki: 500
+      pr: 1
+  '5':
+    id: '5'
+    type: dungeon_pass
+    target: '&3&lSfera koniunkcji - Mityczny'
+    name: '&9&lPrzebudzenie'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &3&lSfera koniunkcji'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 75000
+      stygia: 1000
+      brylki: 500
+      pr: 1
+  '6':
+    id: '6'
+    type: dungeon_kill
+    target: '&c&lMidas - Straznik Bramy'
+    name: '&2&lYOU SHALL NOT PASS!'
+    lore:
+    - ' '
+    - '&aPokonano &c&lMidasa'
+    - '&aStraznika Bramy Twierdzy Pustki'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 35000
+      stygia: 600
+      coins: 15000
+      brylki: 400
+  '7':
+    id: '7'
+    type: dungeon_kill
+    target: '&5&lVivian - Zamkowa Dama'
+    name: '&d&lSzlachetna dama'
+    lore:
+    - ' '
+    - '&aPokonano &5&lVivian'
+    - '&aZamkowa Dame'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 35000
+      stygia: 600
+      coins: 15000
+      brylki: 400
+  '8':
+    id: '8'
+    type: dungeon_kill
+    target: '&8&lInubis - Lord Pustki'
+    name: '&8&lLord Chaosu'
+    lore:
+    - ' '
+    - '&aPokonano &8&lInubisa'
+    - '&aLorda Pustki'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 45000
+      stygia: 750
+      coins: 25000
+      brylki: 550
+  '9':
+    id: '9'
+    type: dungeon_kill
+    target: '&4&oHrabia Niklaus'
+    name: '&e&lWielki majestat'
+    lore:
+    - ' '
+    - '&aPokonano &4&oHrabiego Niklausa'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 25000
+      stygia: 400
+      coins: 9000
+      brylki: 250
+  '10':
+    id: '10'
+    type: dungeon_kill
+    target: '&4&oBaronowa Frieda'
+    name: '&6&lObfita uczta'
+    lore:
+    - ' '
+    - '&aPokonano &4&oBaronowa Friede'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 25000
+      stygia: 400
+      coins: 9000
+      brylki: 250
+  '11':
+    id: '11'
+    type: dungeon_kill
+    target: '&8&lNULL - Legendary Boss'
+    name: '&8&lZaplecze Herobrine''a'
+    lore:
+    - ' '
+    - '&aPokonano &8&lNULLa'
+    - '&agenerala Twierdzy Pustki'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 75000
+      stygia: 1100
+      coins: 40000
+      brylki: 625
+      pr: 1
+  '12':
+    id: '12'
+    type: dungeon_pass
+    target: '&8&lTwierdza Pustki - Mityczny'
+    name: '&8&lArmia Pustki'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &8&lTwierdza Pustki'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 90000
+      stygia: 1350
+      coins: 50000
+      brylki: 675
+      pr: 2
+  '13':
+    id: '13'
+    type: dungeon_kill
+    target: '&9&lKrol Tulaczy'
+    name: '&7&lGra w kosci'
+    lore:
+    - ' '
+    - '&aPokonano &9&lKrola Tulaczy'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 40000
+      stygia: 700
+      coins: 20000
+      brylki: 450
+  '14':
+    id: '14'
+    type: dungeon_kill
+    target: '&3&lPrzadka'
+    name: '&a&lOpowiesc o Jasiu i Malgosi'
+    lore:
+    - ' '
+    - '&aPokonano &3&lPrzadke'
+    - '&aWiedzme z Krzywouchych Moczarow'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 40000
+      stygia: 700
+      coins: 20000
+      brylki: 450
+  '15':
+    id: '15'
+    type: dungeon_kill
+    target: '&3&lKuchta'
+    name: '&c&lA co tam dzisiaj gotujesz?'
+    lore:
+    - ' '
+    - '&aPokonano &3&lKuchte'
+    - '&aWiedzme z Krzywouchych Moczarow'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 40000
+      stygia: 700
+      coins: 20000
+      brylki: 450
+  '16':
+    id: '16'
+    type: dungeon_kill
+    target: '&7&lAreita - Krolowa Pajakow'
+    name: '&7&lCo wpadnie w moja siec - nie ucieknie'
+    lore:
+    - ' '
+    - '&aPokonano &7&lAreite'
+    - '&aKrolowa Pajakow'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 40000
+      stygia: 700
+      coins: 20000
+      brylki: 450
+  '17':
+    id: '17'
+    type: dungeon_kill
+    target: '&8&lSentenza - Lord Pustki'
+    name: '&8&lDrugi Lord Chaosu'
+    lore:
+    - ' '
+    - '&aPokonano &8&lSentenze'
+    - '&aLorda Pustki'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 55000
+      stygia: 850
+      coins: 35000
+      brylki: 600
+      pr: 1
+  '18':
+    id: '18'
+    type: dungeon_kill
+    target: '&9&lHerobrine - Legendary Boss'
+    name: '&8&lZawartego paktu nie da sie zlamac'
+    lore:
+    - ' '
+    - '&aPokonano &9&lHerobrine''a'
+    - '&aTyrana Nowego Swiata'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 90000
+      stygia: 1300
+      coins: 60000
+      brylki: 750
+      pr: 1
+  '19':
+    id: '19'
+    type: dungeon_pass
+    target: '&5&lMroczny Dwor - Mityczny'
+    name: '&a&lWycieczka do Wielkiego Dworu'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &5&lMroczny Dwor'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 115000
+      stygia: 1500
+      coins: 75000
+      brylki: 800
+      pr: 2
+  '20':
+    id: '20'
+    type: dungeon_kill
+    target: '&4&lDeathwing - Aspekt Ziemii - Legendary Boss'
+    name: '&4&lPrzebudzenie smoka'
+    lore:
+    - ' '
+    - '&aPokonano &4&lDeathwing''a'
+    - '&aAspekt Ziemii'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 250000
+      stygia: 10000
+      coins: 200000
+      brylki: 9000
+      pr: 3
+  '21':
+    id: '21'
+    type: dungeon_pass
+    target: '&4&lKATAKLIZM - Mityczny'
+    name: '&c&lZniszczony Aspekt Ziemii'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &4&lKATAKLIZM'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 300000
+      stygia: 12000
+      coins: 245000
+      brylki: 11500
+      pr: 4
+  '22':
+    id: '22'
+    type: dungeon_kill
+    target: '&6&lOMNOTRON'
+    name: '&4&lSystem obronny pierwszej klasy'
+    lore:
+    - ' '
+    - '&aZniszczono &6&lOmnotrona'
+    - '&aSystem Obronny Sanktuarium Nefariana'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 40000
+      stygia: 700
+      coins: 20000
+      brylki: 450
+  '23':
+    id: '23'
+    type: dungeon_kill
+    target: '&5&lMaloriak'
+    name: '&2&lEksperyment kluczem do sukcesu'
+    lore:
+    - ' '
+    - '&aPokonano &5&lMaloriaka'
+    - '&aAlchemika Nefariana'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 40000
+      stygia: 700
+      coins: 20000
+      brylki: 450
+  '24':
+    id: '24'
+    type: dungeon_kill
+    target: '&8&lAtramedes'
+    name: '&9&lNie potrzebuje wzroku, by cie widziec'
+    lore:
+    - ' '
+    - '&aPokonano &8&lAtramedesa'
+    - '&aNajwieksze Osiagniecie Nefariana'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 40000
+      stygia: 700
+      coins: 20000
+      brylki: 450
+  '25':
+    id: '25'
+    type: dungeon_kill
+    target: '&4&lNefarian - Czarnoskrzydly Wladca - Legendary Boss'
+    name: '&6&lWielka Gra'
+    lore:
+    - ' '
+    - '&aPokonano &4&lNefariana'
+    - '&aCzarnoskrzydlego Wladce'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 90000
+      stygia: 1300
+      coins: 60000
+      brylki: 750
+      pr: 1
+  '26':
+    id: '26'
+    type: dungeon_pass
+    target: '&5&oSanktuarium Nefariana - Mityczny'
+    name: '&4&lZbrodnia przeciwko wlasnej rasie'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &5&oSanktuarium Nefariana'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 115000
+      stygia: 1500
+      coins: 75000
+      brylki: 800
+      pr: 2
+  '27':
+    id: '27'
+    type: dungeon_kill
+    target: '&c&l&oShannox - spaczony lowca'
+    name: '&a&lZawsze trafiam do celu'
+    lore:
+    - ' '
+    - '&aPokonano &c&lShannoxa'
+    - '&aSpaczonego Lowce'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 40000
+      stygia: 700
+      coins: 20000
+      brylki: 450
+  '28':
+    id: '28'
+    type: dungeon_kill
+    target: '&4&oAlysrazor - glos Ragnarosa'
+    name: '&c&lPrzemawia przeze mnie sam Ragnaros'
+    lore:
+    - ' '
+    - '&aPokonano &4&oAlysrazora'
+    - '&aGlos Ragnarosa'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 40000
+      stygia: 700
+      coins: 20000
+      brylki: 450
+  '29':
+    id: '29'
+    type: dungeon_kill
+    target: '&4&lMajordomus Staghelm'
+    name: '&6&lSluzba Wladcy Ognia'
+    lore:
+    - ' '
+    - '&aPokonano &4&lStaghelma'
+    - '&aMajordomusa Ragnarosa'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 40000
+      stygia: 700
+      coins: 20000
+      brylki: 450
+  '30':
+    id: '30'
+    type: dungeon_kill
+    target: '&c&lRAGNAROS - Pan Czelusci - Legendary Boss'
+    name: '&c&lPlomienie Sulfurasa'
+    lore:
+    - ' '
+    - '&aPokonano &4&lRagnarosa'
+    - '&aPana Czelusci'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 90000
+      stygia: 1300
+      coins: 60000
+      brylki: 750
+      pr: 1
+  '31':
+    id: '31'
+    type: dungeon_pass
+    target: '&4&oTwierdza Ragnarosa - Mityczny'
+    name: '&c&lGoraca impreza'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &4&lTwierdza Ragnarosa'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 115000
+      stygia: 1500
+      coins: 75000
+      brylki: 800
+      pr: 2
+  '32':
+    id: '32'
+    type: dungeon_kill
+    target: '&2&lSpetany Kaczor325'
+    name: '&5&lUpadly administrator'
+    lore:
+    - ' '
+    - '&aOswobodzono &2&lKaczora325'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 50000
+      stygia: 775
+      coins: 27500
+      brylki: 525
+  '33':
+    id: '33'
+    type: dungeon_kill
+    target: '&2&lSpetany kamilosss_321'
+    name: '&5&lNajwieksze umysly nie moga sie rownac'
+    lore:
+    - ' '
+    - '&aOswobodzono &2&lkamilosssa_321'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 50000
+      stygia: 775
+      coins: 27500
+      brylki: 525
+  '34':
+    id: '34'
+    type: dungeon_kill
+    target: '&c&lSpetany BTT_ONCE_TTB'
+    name: '&5&lKazdy umysl bedzie im posluszny'
+    lore:
+    - ' '
+    - '&aOswobodzono &c&lBTT_ONCE_TTB'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 50000
+      stygia: 775
+      coins: 27500
+      brylki: 525
+  '35':
+    id: '35'
+    type: dungeon_kill
+    target: '&c&lSpetany WkLz0'
+    name: '&5&lNiekonczacy sie koszmar'
+    lore:
+    - ' '
+    - '&aOswobodzono &c&lWkLz0'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 50000
+      stygia: 775
+      coins: 27500
+      brylki: 525
+  '36':
+    id: '36'
+    type: dungeon_kill
+    target: '&5&lSpetany crqt_lmaoo'
+    name: '&5&lBezradny sierpowaty ksiezyc'
+    lore:
+    - ' '
+    - '&aOswobodzono &5&lcrqt_lmaoo'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 50000
+      stygia: 775
+      coins: 27500
+      brylki: 525
+  37a:
+    id: 37a
+    type: dungeon_kill
+    target: '&c&lSpetany KDubi_PL'
+    name: '&5&lJest nas wielu'
+    lore:
+    - ' '
+    - '&aOswobodzono &c&lKDubiego_PL'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 12500
+      stygia: 195
+      coins: 7000
+      brylki: 135
+  37b:
+    id: 37b
+    type: dungeon_kill
+    target: '&c&lSpetany KDubi_PL7'
+    name: '&5&lMoc Szpona w niewlasciwych rekach'
+    lore:
+    - ' '
+    - '&aOswobodzono &c&lKDubiego_PL7'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 12500
+      stygia: 195
+      coins: 7000
+      brylki: 135
+  37c:
+    id: 37c
+    type: dungeon_kill
+    target: '&2&lSpetany KDubi_PL6'
+    name: '&5&lWielka moc Przedwiecznych'
+    lore:
+    - ' '
+    - '&aOswobodzono &2&lKDubiego_PL6'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 12500
+      stygia: 195
+      coins: 7000
+      brylki: 135
+  37d:
+    id: 37d
+    type: dungeon_kill
+    target: '&2&lSpetany KDubi_PL2'
+    name: '&5&lCzym jest lowca bez swego zmyslu...'
+    lore:
+    - ' '
+    - '&aOswobodzono &2&lKDubiego_PL2'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 12500
+      stygia: 195
+      coins: 7000
+      brylki: 135
+  37e:
+    id: 37e
+    type: dungeon_kill
+    target: '&5&lSpetany KDubi_PL3'
+    name: '&5&lNieograniczona moc magiczna'
+    lore:
+    - ' '
+    - '&aOswobodzono &5&lKDubiego_PL3'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 12500
+      stygia: 195
+      coins: 7000
+      brylki: 135
+  37f:
+    id: 37f
+    type: dungeon_kill
+    target: '&5&lSpetany KDubi_PL8'
+    name: '&5&lNajmocniejsze umysly potrafia temu glosowi'
+    lore:
+    - ' '
+    - '&aOswobodzono &5&lKDubiego_PL8'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 12500
+      stygia: 195
+      coins: 7000
+      brylki: 135
+  37g:
+    id: 37g
+    type: dungeon_kill
+    target: '&a&lSpetany KDubi_PL4'
+    name: '&5&lNawet zwykly obywatel'
+    lore:
+    - ' '
+    - '&aOswobodzono &a&lKDubiego_PL4'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 12500
+      stygia: 195
+      coins: 7000
+      brylki: 135
+  '38':
+    id: '38'
+    type: dungeon_kill
+    target: '&2&lSpetany piotr0727'
+    name: '&5&lZaufaj mi, a dam Ci zwyciestwo'
+    lore:
+    - ' '
+    - '&aOswobodzono &2&lpiotra0727'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 62500
+      stygia: 950
+      coins: 45000
+      brylki: 700
+      pr: 1
+  '39':
+    id: '39'
+    type: dungeon_kill
+    target: '&5&lSpetany DominikPL1590 - Legendary Boss'
+    name: '&5&lON NALEZY DO MNIE!'
+    lore:
+    - ' '
+    - '&aOswobodzono &5&lDominikaPL1590'
+    - '&aspetanego przez Yogg''Sarona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 105000
+      stygia: 1500
+      coins: 80000
+      brylki: 1100
+      pr: 1
+  '40':
+    id: '40'
+    type: dungeon_pass
+    target: '&d&lSzepty Przedwiecznych - Mityczny'
+    name: '&5&lUspione Zlo'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &d&lSzepty Przedwiecznych'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 140000
+      stygia: 1850
+      coins: 115000
+      brylki: 1250
+      pr: 2
+  '41':
+    id: '41'
+    type: dungeon_kill
+    target: '&5&lIgnaz - Spetany Alchemik'
+    name: '&d&lSzalony alchemik'
+    lore:
+    - ' '
+    - '&aOswobodzono &5&lIgnaza'
+    - '&aspetanego alchemika'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 55000
+      stygia: 825
+      coins: 32500
+      brylki: 600
+  '42':
+    id: '42'
+    type: dungeon_kill
+    target: '&7&lSartura - Straznik Ulduaru'
+    name: '&7&lSilna i niezalezna'
+    lore:
+    - ' '
+    - '&aPokonano &7&lSarture'
+    - '&astraznika Ulduaru'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 55000
+      stygia: 825
+      coins: 32500
+      brylki: 600
+  '43':
+    id: '43'
+    type: dungeon_kill
+    target: '&d&l&oKri - Lord Spetania'
+    name: '&d&lGlos Yogg''Sarona'
+    lore:
+    - ' '
+    - '&aPokonano &d&l&oKri'
+    - '&aLorda Spetania'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 55000
+      stygia: 825
+      coins: 32500
+      brylki: 600
+  '44':
+    id: '44'
+    type: dungeon_kill
+    target: '&5&lImperator Vek''lor'
+    name: '&d&lCzarny imperator'
+    lore:
+    - ' '
+    - '&aPokonano &5&lVek''lora'
+    - '&aImperatora Czarnego Imperium'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 55000
+      stygia: 825
+      coins: 32500
+      brylki: 600
+  '45':
+    id: '45'
+    type: dungeon_kill
+    target: '&5&lImperator Vek''nilash'
+    name: '&d&lSzalony imperator'
+    lore:
+    - ' '
+    - '&aPokonano &5&lVek''nilasha'
+    - '&aImperatora Czarnego Imperium'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 55000
+      stygia: 825
+      coins: 32500
+      brylki: 600
+  '46':
+    id: '46'
+    type: dungeon_kill
+    target: '&3&lYogg''Saron - Legendary Boss'
+    name: '&d&lUulwi ifis halahs gag erh''ongg w''ssh!'
+    lore:
+    - ' '
+    - '&aPokonano &3&lYogg''Sarona'
+    - '&aSzalonego Przedwiecznego Boga'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 125000
+      stygia: 1850
+      coins: 92500
+      brylki: 1350
+      pr: 2
+  '47':
+    id: '47'
+    type: dungeon_pass
+    target: '&5&lWiezienie Ulduar - Mityczny'
+    name: '&d&lUwolniony Przedwieczny'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &5&lWiezienie Ulduar'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 165000
+      stygia: 2100
+      coins: 130000
+      brylki: 1500
+      pr: 4
+  '48':
+    id: '48'
+    type: dungeon_kill
+    target: '&c&lSinestra - Mroczna Matka'
+    name: '&c&lKochana matka'
+    lore:
+    - ' '
+    - '&aPokonano &c&lSinestre'
+    - '&aMroczna Matke'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 55000
+      stygia: 825
+      coins: 32500
+      brylki: 600
+  '49':
+    id: '49'
+    type: dungeon_kill
+    target: '&4&lOnyxia - Plugawa Matka'
+    name: '&4&lPlugawicielka'
+    lore:
+    - ' '
+    - '&aPokonano &4&lOnyxie'
+    - '&aPlugawa Matke'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 70000
+      stygia: 1000
+      coins: 37500
+      brylki: 750
+      pr: 1
+  '50':
+    id: '50'
+    type: dungeon_kill
+    target: '&7&lNefarian - Zmartwychwstaly Smok'
+    name: '&7&lJaki ojciec, taki syn'
+    lore:
+    - ' '
+    - '&aPokonano &7&lNefariana'
+    - '&aZmartwychwstalego Smoka'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 55000
+      stygia: 825
+      coins: 32500
+      brylki: 600
+  '51':
+    id: '51'
+    type: dungeon_kill
+    target: '&4&lNeltharion - Szalony Aspekt - Legendary Boss'
+    name: '&4&lWszystko splonie pod cieniem skrzydel!'
+    lore:
+    - ' '
+    - '&aPokonano &4&lNelthariona'
+    - '&aSzalony Aspekt'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 175000
+      stygia: 2500
+      coins: 105000
+      brylki: 1950
+      pr: 4
+  '52':
+    id: '52'
+    type: dungeon_pass
+    target: '&c&lSzalenstwo Nelthariona - Mityczny'
+    name: '&c&lNIEZWYCIEZONY, NIEPOKONANY!'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &c&lSzalenstwo Nelthariona'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 200000
+      stygia: 2750
+      coins: 160000
+      brylki: 2000
+      pr: 4
+  '53':
+    id: '53'
+    type: dungeon_kill
+    target: '&6&lDuzy Ben - &4&lPotwor Areny'
+    name: '&e&lW jednym kawalku'
+    lore:
+    - ' '
+    - '&aPokonano &6&lDuzego Bena'
+    - '&aPotwora Areny'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 25000
+      brylki: 300
+  '54':
+    id: '54'
+    type: dungeon_kill
+    target: '&7&lThorus - Straznik bramy'
+    name: '&7&lStraznik z krwi i kosci'
+    lore:
+    - ' '
+    - '&aPokonano &7&lThorusa'
+    - '&aStraznika Bramy'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 25000
+      brylki: 300
+  '55':
+    id: '55'
+    type: dungeon_kill
+    target: '&c&lBullit - Sadystyczny straznik'
+    name: '&c&lNikt nie wie co Ciebie czeka za zakretem'
+    lore:
+    - ' '
+    - '&aPokonano &c&lBullita'
+    - '&aSadystycznego Straznika'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 25000
+      brylki: 300
+  '56':
+    id: '56'
+    type: dungeon_kill
+    target: '&6&lBartholo - Elita obozu'
+    name: '&6&lNa zawolanie'
+    lore:
+    - ' '
+    - '&aPokonano &6&lBartholo'
+    - '&aElite Obozu'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 25000
+      brylki: 300
+  '57':
+    id: '57'
+    type: dungeon_kill
+    target: '&c&oCorristo - Przeklety Arcymag'
+    name: '&4&lGomez o niczym nie wiedzial'
+    lore:
+    - ' '
+    - '&aPokonano &c&oCorristo'
+    - '&aPrzekletego Arcymaga'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 25000
+      brylki: 300
+  '58':
+    id: '58'
+    type: dungeon_kill
+    target: '&6&lMarvin - Bohater Kronik - Legendary Boss'
+    name: '&6&lOfiara szlachty'
+    lore:
+    - ' '
+    - '&aPokonano &6&lMarvina'
+    - '&aBohatera Kronik'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 65000
+      brylki: 500
+      pr: 1
+  '59':
+    id: '59'
+    type: dungeon_pass
+    target: '&c&lBitwa o Stary Oboz - Mityczny'
+    name: '&c&lCzerwien &7&li &b&lblekit'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &c&lBitwa o Stary Oboz'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 75000
+      stygia: 1000
+      brylki: 500
+      pr: 1
+  '60':
+    id: '60'
+    type: dungeon_kill
+    target: '&7&lKin-Tara'
+    name: '&7&lNa krawedzi'
+    lore:
+    - ' '
+    - '&aPokonano &7&lKin-Tare'
+    - '&aParagona Devos'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 60000
+      stygia: 875
+      coins: 36000
+      brylki: 675
+  '61':
+    id: '61'
+    type: dungeon_kill
+    target: '&3&l&oVentunax'
+    name: '&3&l&oCios w plecy'
+    lore:
+    - ' '
+    - '&aPokonano &3&l&oVentunax'
+    - '&aPrzeprogramowanego Zwiadowce'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 60000
+      stygia: 875
+      coins: 36000
+      brylki: 675
+  '62':
+    id: '62'
+    type: dungeon_kill
+    target: '&3&lOryphrion'
+    name: '&3&lMaszyna Animy'
+    lore:
+    - ' '
+    - '&aPokonano &3&lOryphriona'
+    - '&aKolosa Bastionu'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 60000
+      stygia: 875
+      coins: 36000
+      brylki: 675
+  '63':
+    id: '63'
+    type: dungeon_kill
+    target: '&3&lLysonia - Legendary Boss'
+    name: '&3&lIgnorantka'
+    lore:
+    - ' '
+    - '&aPokonano &3&lLysonie'
+    - '&aLiderke Buntu Kyrianow'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 185000
+      stygia: 2850
+      coins: 112500
+      brylki: 2200
+      pr: 2
+  '64':
+    id: '64'
+    type: dungeon_pass
+    target: '&b&lIglice wyniesienia - Mityczny'
+    name: '&b&lBunt Wyniesionych'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &b&lIglice Wyniesienia'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 220000
+      stygia: 3350
+      coins: 182500
+      brylki: 2750
+      pr: 4
+  '65':
+    id: '65'
+    type: dungeon_kill
+    target: '&7&lVarrag-Hashor'
+    name: '&7&lGnijacy Ochlap'
+    lore:
+    - ' '
+    - '&aPokonano &7&lVarrag-Hashora'
+    - '&aNieumarlego Kaplana'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 60000
+      stygia: 875
+      coins: 36000
+      brylki: 675
+  '66':
+    id: '66'
+    type: dungeon_kill
+    target: '&7&lVarrag-Kasorg'
+    name: '&7&lSam badz przeklety, pajacu'
+    lore:
+    - ' '
+    - '&aPokonano &7&lVarrag-Kasorga'
+    - '&aNieumarlego Kaplana'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 60000
+      stygia: 875
+      coins: 36000
+      brylki: 675
+  '67':
+    id: '67'
+    type: dungeon_kill
+    target: '&7&lVarrag-Unhilqt'
+    name: '&7&lGnijace mumie przodem'
+    lore:
+    - ' '
+    - '&aPokonano &7&lVarrag-Unhilqta'
+    - '&aNieumarlego Kaplana'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 60000
+      stygia: 875
+      coins: 36000
+      brylki: 675
+  '68':
+    id: '68'
+    type: dungeon_kill
+    target: '&7&lVarrag-Ruuushk'
+    name: '&7&lWolalbym nie, jesli laska'
+    lore:
+    - ' '
+    - '&aPokonano &7&lVarrag-Ruuushka'
+    - '&aNieumarlego Kaplana'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 60000
+      stygia: 875
+      coins: 36000
+      brylki: 675
+  '69':
+    id: '69'
+    type: dungeon_kill
+    target: '&9&lSwiatynna Krolowa Pelzaczy'
+    name: '&6&lNiczym Kleopatra'
+    lore:
+    - ' '
+    - '&aPokonano &9&lSwiatynna Krolowa Pelzaczya'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 60000
+      stygia: 875
+      coins: 36000
+      brylki: 675
+  '70':
+    id: '70'
+    type: dungeon_kill
+    target: '&7&lGrash-Varrag-Arushat'
+    name: '&7&lNie ma lekko, budzimy spiocha'
+    lore:
+    - ' '
+    - '&aPokonano &7&lGrash-Varrag-Arushata'
+    - '&aNieumarlego Arcykaplana'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 60000
+      stygia: 875
+      coins: 36000
+      brylki: 675
+  '71':
+    id: '71'
+    type: dungeon_kill
+    target: '&5&lGor Boba'
+    name: '&e&lJestesmy niesmiertelni'
+    lore:
+    - ' '
+    - '&aPokonano &5&lGor Bobe'
+    - '&aSzalonego Straznika'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 60000
+      stygia: 875
+      coins: 36000
+      brylki: 675
+  '72':
+    id: '72'
+    type: dungeon_kill
+    target: '&c&lSzalony Cor Kalom - Legendarny Boss'
+    name: '&5&lSNIACY, ZBUDZ SIE'
+    lore:
+    - ' '
+    - '&aPokonano &c&lCor Kaloma'
+    - '&aSzalonego Guru'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 120000
+      stygia: 1500
+      coins: 75000
+      brylki: 1250
+      pr: 1
+  '73':
+    id: '73'
+    type: dungeon_kill
+    target: '&5&lSNIACY - Legendary Boss'
+    name: '&d&lSpioch'
+    lore:
+    - ' '
+    - '&aWygnano &5&lSniacego'
+    - '&aArcydemona Beliara'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 185000
+      stygia: 2850
+      coins: 112500
+      brylki: 2200
+      pr: 2
+  '74':
+    id: '74'
+    type: dungeon_pass
+    target: '&5&lPrzebudzenie Sniacego - Mityczny'
+    name: '&5&lJeszcze 5 minut'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &5&lPrzebudzenie Sniacego'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 220000
+      stygia: 3350
+      coins: 182500
+      brylki: 2750
+      pr: 4
+  '75':
+    id: '75'
+    type: dungeon_kill
+    target: '&7&lStonnos - Legendary Boss'
+    name: '&7&lUkryte zagrozenie'
+    lore:
+    - ' '
+    - '&aPokonano &5&lStonnosa'
+    - '&aStarozytnego Opiekuna'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 200000
+      stygia: 4000
+      coins: 130000
+      brylki: 4500
+      pr: 3
+  '76':
+    id: '76'
+    type: dungeon_pass
+    target: '&7&lKamienna Prawda - Mityczny'
+    name: '&c&lSmoczy wielbiciel'
+    lore:
+    - ' '
+    - '&aUkonczono dungeon &7&lKamienna Prawda'
+    - '&ana poziomie mitycznym'
+    difficulty: mythic
+    reward:
+      money: 250000
+      stygia: 3750
+      coins: 200000
+      brylki: 4000
+      pr: 4
+klany:
+  Tester:
+    tag: Tester
+    osiagniecia:
+    - '32'
+    - '6'
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '7'
+    - '8'
+    - '10'
+    - '9'
+    - '11'
+    - '12'
+    - '20'
+    - '21'
+    - '13'
+    - '14'
+    - '15'
+    - '16'
+    - '17'
+    - '18'
+    - '19'
+    - '27'
+    - '28'
+    - '29'
+    - '30'
+    - '31'
+    - '22'
+    - '23'
+    - '24'
+    - '25'
+    - '26'
+    - '33'
+    - '34'
+    - '35'
+    - '36'
+    - 37e
+    - 37g
+    - 37b
+    - 37c
+    - 37f
+    - 37d
+    - 37a
+    - '38'
+    - '39'
+    - '40'
+  Smok:
+    tag: Smok
+    osiagniecia:
+    - '13'
+    - '14'
+    - '15'
+  BEER:
+    tag: BEER
+    osiagniecia:
+    - '20'
+    - '21'
+    - '39'
+    - '15'
+  0-0:
+    tag: 0-0
+    osiagniecia:
+    - '20'
+    - '21'
+    - '22'
+    - '23'
+    - '24'
+    - '6'
+    - '7'
+    - '8'
+    - '10'
+    - '9'
+    - '11'
+    - '12'
+  RIP:
+    tag: RIP
+    osiagniecia:
+    - '20'
+    - '21'
+    - '6'
+  lol:
+    tag: lol
+    osiagniecia:
+    - '6'
+    - '7'
+    - '8'
+    - '10'
+    - '9'
+    - '13'
+    - '14'
+    - '15'
+    - '16'
+    - '17'
+    - '27'
+    - '20'
+    - '21'
+    - '32'
+    - '33'
+    - '34'
+    - '35'
+    - '36'
+    - 37d
+    - 37g
+    - 37e
+    - 37c
+  0-9:
+    tag: 0-9
+    osiagniecia:
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '10'
+    - '11'
+    - '12'
+  EZA:
+    tag: EZA
+    osiagniecia:
+    - '6'
+    - '1'
+    - '2'
+    - '3'
+    - '7'
+    - '8'
+    - '10'
+    - '9'
+    - '11'
+    - '12'
+    - '13'
+    - '22'
+    - '23'
+    - '32'
+    - '27'
+    - '28'
+    - '29'
+    - '24'
+    - '30'
+    - '31'
+    - '25'
+    - '26'
+    - '33'
+    - '34'
+    - '4'
+    - '5'
+    - '20'
+    - '21'
+    - '14'
+    - '15'
+    - '16'
+    - '17'
+    - '35'
+    - '36'
+    - 37e
+    - 37d
+    - 37b
+    - 37g
+    - 37f
+    - 37c
+    - 37a
+    - '38'
+    - '39'
+    - '40'
+    - '48'
+    - '49'
+    - '41'
+    - '42'
+    - '43'
+    - '44'
+    - '45'
+    - '50'
+    - '53'
+    - '54'
+    - '55'
+    - '56'
+    - '57'
+    - '60'
+    - '61'
+    - '62'
+    - '18'
+    - '19'
+    - '58'
+    - '59'
+    - '63'
+    - '52'
+    - '46'
+    - '47'
+    - '65'
+    - '66'
+    - '67'
+    - '68'
+    - '69'
+    - '70'
+    - '71'
+    - '72'
+    - '51'
+    - '75'
+    - '76'
+    - '73'
+    - '74'
+    - '64'
+  BREAD:
+    tag: BREAD
+    osiagniecia:
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '6'
+    - '7'
+    - '8'
+    - '10'
+    - '9'
+    - '11'
+    - '12'
+    - '13'
+    - '14'
+    - '15'
+    - '16'
+    - '17'
+    - '32'
+    - '20'
+    - '21'
+    - '22'
+    - '23'
+    - '24'
+    - '25'
+    - '26'
+    - '27'
+    - '28'
+    - '29'
+    - '33'
+    - '34'
+    - '35'
+    - '36'
+    - 37f
+    - 37b
+    - 37c
+    - 37d
+    - 37e
+    - 37g
+    - 37a
+    - '38'
+    - '39'
+    - '40'
+    - '30'
+    - '31'
+    - '48'
+    - '49'
+    - '50'
+    - '41'
+    - '42'
+    - '43'
+    - '44'
+    - '45'
+    - '46'
+    - '47'
+    - '51'
+    - '52'
+    - '5'
+    - '18'
+    - '19'
+    - '53'
+    - '54'
+    - '55'
+    - '56'
+    - '57'
+    - '58'
+    - '59'
+    - '60'
+    - '61'
+    - '62'
+    - '63'
+    - '64'
+    - '75'
+    - '76'
+    - '65'
+    - '66'
+    - '67'
+    - '68'
+    - '69'
+    - '70'
+    - '71'
+    - '72'
+    - '73'
+    - '74'
+  KDI:
+    tag: KDI
+    osiagniecia:
+    - '27'
+    - '28'
+    - '29'
+    - '30'
+    - '31'
+  BUTTER:
+    tag: BUTTER
+    osiagniecia:
+    - '22'
+    - '23'
+  ERROR:
+    tag: ERROR
+    osiagniecia:
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '10'
+    - '11'
+    - '12'
+  POTATO:
+    tag: POTATO
+    osiagniecia:
+    - '27'
+    - '28'
+    - '29'
+    - '30'
+    - '31'
+    - '22'
+    - '23'
+    - '24'
+    - '25'
+    - '26'
+    - '1'
+    - '2'
+    - '3'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
+    - '10'
+    - '32'
+    - '33'
+    - '4'
+    - '5'
+    - '11'
+    - '12'
+    - '34'
+    - '35'
+    - '36'
+    - 37f
+    - 37b
+    - 37e
+    - 37c
+    - 37g
+    - 37d
+    - 37a
+    - '38'
+    - '53'
+    - '54'
+    - '55'
+    - '56'
+    - '57'
+    - '58'
+    - '59'
+    - '13'
+    - '14'
+    - '15'
+    - '16'
+    - '48'
+    - '49'
+    - '50'
+    - '17'
+    - '18'
+    - '19'
+    - '39'
+    - '40'
+    - '20'
+    - '21'
+    - '60'
+    - '61'
+    - '62'
+    - '63'
+    - '64'
+    - '51'
+    - '52'
+  Zinith:
+    tag: Zinith
+    osiagniecia:
+    - '6'
+    - '7'
+    - '8'
+    - '10'
+    - '9'
+    - '41'
+    - '22'
+    - '23'
+    - '24'
+    - '48'
+    - '49'
+    - '50'
+    - '25'
+    - '26'
+    - '20'
+    - '21'
+    - '1'
+    - '2'
+    - '3'
+    - '53'
+    - '54'
+    - '55'
+    - '56'
+    - '57'
+    - '58'
+    - '59'
+    - '27'
+    - '28'
+    - '29'
+    - '30'
+    - '31'
