@@ -61,7 +61,7 @@ public class ClanPlayer {
 		if(event.isCancelled()) {
 			p.sendMessage("§7["+Config.get().getPrefix()+"§7] §bNie mozna zaprosic §7§o"+p2.getName()+" §bdo klanu");
 			if(event.getCancelMessage() != null && !event.getCancelMessage().isEmpty())
-				p.sendMessage("§dPowod: §7§o"+event.getCancelMessage());
+				p.sendMessage("§bPowod: §7§o"+event.getCancelMessage());
 			return;
 		}
 

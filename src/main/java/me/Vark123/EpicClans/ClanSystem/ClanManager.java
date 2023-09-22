@@ -162,8 +162,8 @@ public final class ClanManager {
 			clan.broadcastMessage("§7"+p.getName()+" §bnie moze dolaczyc do klanu");
 			p.sendMessage("§7["+Config.get().getPrefix()+"§7] §bNie mozesz dolaczyc do klanu §r"+clan.getColor()+clan.getId());
 			if(event.getCancelMessage() != null && !event.getCancelMessage().isEmpty()) {
-				clan.broadcastMessage("§bPowod: §r"+event.getCancelMessage());
-				p.sendMessage("§bPowod: §r"+event.getCancelMessage());
+				clan.broadcastMessage("§bPowod: §7§o"+event.getCancelMessage());
+				p.sendMessage("§bPowod: §7§o"+event.getCancelMessage());
 			}
 			return false;
 		}
@@ -192,7 +192,7 @@ public final class ClanManager {
 		if(event.isCancelled()) {
 			p.sendMessage("§7["+Config.get().getPrefix()+"§7] §bNie mozesz wyrzucic z klanu §7"+kicked.toBukkitPlayer().getName());
 			if(event.getCancelMessage() != null && !event.getCancelMessage().isEmpty()) {
-				p.sendMessage("§bPowod: §r"+event.getCancelMessage());
+				p.sendMessage("§bPowod: §7§o"+event.getCancelMessage());
 			}
 			return false;
 		}
@@ -222,7 +222,7 @@ public final class ClanManager {
 		if(event.isCancelled()) {
 			p.sendMessage("§7["+Config.get().getPrefix()+"§7] §bNie mozesz opuscic klanu §r"+clan.getColor()+clan.getId());
 			if(event.getCancelMessage() != null && !event.getCancelMessage().isEmpty()) {
-				p.sendMessage("§bPowod: §r"+event.getCancelMessage());
+				p.sendMessage("§bPowod: §7§o"+event.getCancelMessage());
 			}
 			return false;
 		}
@@ -245,7 +245,7 @@ public final class ClanManager {
 		if(event.isCancelled()) {
 			p.sendMessage("§7["+Config.get().getPrefix()+"§7] §bNie mozesz zmienic lidera klanu na klanu §7§o"+newLeader.toBukkitPlayer().getName());
 			if(event.getCancelMessage() != null && !event.getCancelMessage().isEmpty()) {
-				p.sendMessage("§bPowod: §r"+event.getCancelMessage());
+				p.sendMessage("§bPowod: §7§o"+event.getCancelMessage());
 			}
 			return false;
 		}

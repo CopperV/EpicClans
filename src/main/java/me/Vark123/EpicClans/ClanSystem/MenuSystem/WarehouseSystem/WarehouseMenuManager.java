@@ -15,6 +15,8 @@ import me.Vark123.EpicClans.Main;
 import me.Vark123.EpicClans.ClanSystem.Clan;
 import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.AClanUpgrade;
 import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesManager;
+import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
+import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
 
 @Getter
 public class WarehouseMenuManager {
@@ -66,7 +68,14 @@ public class WarehouseMenuManager {
 								it.setItemMeta(im);
 							}
 							
-							contents.set(i, IntelligentItem.of(it, click -> click.getWhoClicked().openInventory(inv)));
+							contents.set(i, IntelligentItem.of(it, click -> {
+								ClanPlayer cPlayer = PlayerManager.get().getByUID(click.getWhoClicked().getUniqueId()).get();
+								if(cPlayer.getClan().isEmpty() || !cPlayer.getClan().get().equals(clan)) {
+									click.getWhoClicked().closeInventory();
+									return;
+								}
+								click.getWhoClicked().openInventory(inv);
+							}));
 						}
 					});
 			}
