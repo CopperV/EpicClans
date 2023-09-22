@@ -1,5 +1,5 @@
 name: EpicClans
-version: 1.0.0-ALPHA
+version: 1.0.0
 main: me.Vark123.EpicClans.Main
 author: Vark123
 depend: [CalendarEvents,MythicMobs,NBTAPI,WorldGuard,EpicRPG,EpicRPGSkillsAndQuests,EpicParty,PlaceholderAPI]
