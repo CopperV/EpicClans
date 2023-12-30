@@ -1,7 +1,6 @@
 package me.Vark123.EpicClans;
 
 import org.bukkit.Bukkit;
-import org.bukkit.event.EventPriority;
 
 import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.Listeners.ClanKickListener;
 import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.Listeners.ClanLeaveListener;
@@ -16,7 +15,7 @@ import me.Vark123.EpicClans.ClanSystem.EventSystem.GameManager;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.BossFight.BossFightGame;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.BossFight.Listeners.BossDeathListener;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.BossFight.Listeners.BossDespawnListener;
-import me.Vark123.EpicClans.ClanSystem.EventSystem.BossFight.Listeners.BossFightModifier;
+import me.Vark123.EpicClans.ClanSystem.EventSystem.BossFight.Listeners.BossFightListener;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.Listeners.GameRecordingStartListener;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.Listeners.GameStartListener;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.MobArena.MobArenaGame;
@@ -24,10 +23,11 @@ import me.Vark123.EpicClans.ClanSystem.Listeners.ClanLeaveWarehouseProtectionLis
 import me.Vark123.EpicClans.ClanSystem.Listeners.ClanSizeProtectionListener;
 import me.Vark123.EpicClans.ClanSystem.ResourceGeneratorSystem.ResourceGeneratorListener;
 import me.Vark123.EpicClans.PlayerSystem.Listeners.PlayerClanChatSendListener;
+import me.Vark123.EpicClans.PlayerSystem.Listeners.PlayerClanExpShareListener;
+import me.Vark123.EpicClans.PlayerSystem.Listeners.PlayerClanFightListener;
 import me.Vark123.EpicClans.PlayerSystem.Listeners.PlayerJoinListener;
 import me.Vark123.EpicClans.PlayerSystem.Listeners.PlayerQuitListener;
 import me.Vark123.EpicClans.PlayerSystem.Listeners.PlayerRespTaskMoveListener;
-import me.Vark123.EpicRPG.FightSystem.Modifiers.DamageModifierManager;
 import me.nikl.calendarevents.CalendarEventsApi;
 
 public final class ListenerManager {
@@ -63,10 +63,13 @@ public final class ListenerManager {
 		Bukkit.getPluginManager().registerEvents(new ClanSizeProtectionListener(), inst);
 		Bukkit.getPluginManager().registerEvents(new ClanLeaveWarehouseProtectionListener(), inst);
 		
+		Bukkit.getPluginManager().registerEvents(new BossFightListener(), inst);
+
+		Bukkit.getPluginManager().registerEvents(new PlayerClanExpShareListener(), inst);
+		Bukkit.getPluginManager().registerEvents(new PlayerClanFightListener(), inst);
+		
 		GameManager.get().registerGame(new MobArenaGame());
 		GameManager.get().registerGame(new BossFightGame());
-
-		DamageModifierManager.getInstance().registerModifier(new BossFightModifier(), EventPriority.MONITOR);
 		
 		CalendarEventsApi calendar = Main.getInst().getCalendar();
 		if(calendar.isRegisteredEvent("clan_resource_generator"))

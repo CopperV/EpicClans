@@ -1,11 +1,12 @@
 package me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.Listeners;
 
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDeathEvent;
 
+import io.lumine.mythic.bukkit.events.MythicMobDeathEvent;
 import me.Vark123.EpicClans.ClanSystem.AchievementSystem.AchievementManager;
 import me.Vark123.EpicClans.ClanSystem.AchievementSystem.AchievementType;
 import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.ClanRunController;
@@ -16,14 +17,17 @@ import me.Vark123.EpicRPGSkillsAndQuests.PlayerSystem.PlayerQuestImpl.PlayerDung
 public class DungeonBossKillListener implements Listener {
 
 	@EventHandler
-	public void onDeath(EntityDeathEvent e) {
-		LivingEntity victim = e.getEntity();
-		Player killer = e.getEntity().getKiller();
+	public void onDeath(MythicMobDeathEvent e) {
+		Entity victim = e.getEntity();
+		LivingEntity _killer = e.getKiller();
 		if(victim instanceof Player)
 			return;
-		if(killer == null)
+		if(_killer == null)
 			return;
-
+		if(!(_killer instanceof Player))
+			return;
+		
+		Player killer = (Player) _killer;
 		PlayerManager.get().getByUID(killer.getUniqueId()).ifPresent(cPlayer -> {
 			cPlayer.getClan().ifPresent(clan -> {
 				me.Vark123.EpicRPGSkillsAndQuests.PlayerSystem.PlayerManager.get().getQuestPlayer(killer).ifPresent(qp -> {
