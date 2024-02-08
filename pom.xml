@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>me.Vark123.ArcholosRPG</groupId>
 	<artifactId>EpicClans</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>io.github.rysefoxx.inventory</groupId>
 			<artifactId>RyseInventory-Plugin</artifactId>
-			<version>1.6.3</version>
+			<version>1.6.5</version>
 		</dependency>
 		<dependency>
 			<groupId>me.Vark123.ArcholosRPG</groupId>
@@ -117,6 +117,11 @@
 			<artifactId>lombok</artifactId>
 			<version>1.18.26</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>me.Vark123.ArcholosRPG</groupId>
+			<artifactId>EpicOptions</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 </project>

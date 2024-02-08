@@ -218,6 +218,8 @@ public final class TreasuryMenuManager {
 						return Arrays.asList();
 					
 					RpgPlayer rpg = me.Vark123.EpicRPG.Players.PlayerManager.getInstance().getRpgPlayer(player);
+					if(rpg == null)
+						return Arrays.asList();
 					RpgVault vault = rpg.getVault();
 					switch(result.getType()) {
 						case GOLD_NUGGET:
