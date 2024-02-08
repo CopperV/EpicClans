@@ -44,9 +44,6 @@ public final class RoleMenuEvents {
 
 	private EventCreator<InventoryClickEvent> roleListClickEventCreator() {
 		Consumer<InventoryClickEvent> event = e -> {
-			if(e.isCancelled())
-				return;
-			
 			Inventory inv = e.getClickedInventory();
 			if(inv == null || !inv.equals(e.getView().getTopInventory()))
 				return;
@@ -90,9 +87,6 @@ public final class RoleMenuEvents {
 
 	private EventCreator<InventoryClickEvent> roleEditorClickEventCreator() {
 		Consumer<InventoryClickEvent> event = e -> {
-			if(e.isCancelled())
-				return;
-			
 			Inventory inv = e.getClickedInventory();
 			if(inv == null || !inv.equals(e.getView().getTopInventory()))
 				return;
@@ -180,9 +174,6 @@ public final class RoleMenuEvents {
 
 	private EventCreator<InventoryClickEvent> roleDeleteClickEventCreator() {
 		Consumer<InventoryClickEvent> event = e -> {
-			if(e.isCancelled())
-				return;
-			
 			Inventory inv = e.getClickedInventory();
 			if(inv == null || !inv.equals(e.getView().getTopInventory()))
 				return;

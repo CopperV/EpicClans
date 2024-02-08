@@ -32,9 +32,6 @@ public final class ClanAchievementMenuEvents {
 
 	private EventCreator<InventoryClickEvent> clickEventCreator() {
 		Consumer<InventoryClickEvent> event = e -> {
-			if(e.isCancelled())
-				return;
-			
 			Inventory inv = e.getClickedInventory();
 			if(inv == null || !inv.equals(e.getView().getTopInventory()))
 				return;

@@ -43,9 +43,6 @@ public final class PromoteMenuEvents {
 
 	private EventCreator<InventoryClickEvent> clickPlayerListEventCreator() {
 		Consumer<InventoryClickEvent> event = e -> {
-			if(e.isCancelled())
-				return;
-			
 			Inventory inv = e.getClickedInventory();
 			if(inv == null || !inv.equals(e.getView().getTopInventory()))
 				return;
@@ -96,9 +93,6 @@ public final class PromoteMenuEvents {
 
 	private EventCreator<InventoryClickEvent> clickPlayerRankEventCreator() {
 		Consumer<InventoryClickEvent> event = e -> {
-			if(e.isCancelled())
-				return;
-			
 			Inventory inv = e.getClickedInventory();
 			if(inv == null || !inv.equals(e.getView().getTopInventory()))
 				return;
