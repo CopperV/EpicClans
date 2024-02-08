@@ -61,7 +61,7 @@
 		<dependency>
 			<groupId>io.github.rysefoxx.inventory</groupId>
 			<artifactId>RyseInventory-Plugin</artifactId>
-			<version>1.6.3</version>
+			<version>1.6.5</version>
 		</dependency>
 		<dependency>
 			<groupId>me.Vark123.ArcholosRPG</groupId>

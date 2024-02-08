@@ -6,7 +6,7 @@ depend: [CalendarEvents,MythicMobs,NBTAPI,WorldGuard,EpicRPG,EpicRPGSkillsAndQue
 api-version: 1.18
 
 libraries:
-  - io.github.rysefoxx.inventory:RyseInventory-Plugin:1.6.3
+  - io.github.rysefoxx.inventory:RyseInventory-Plugin:1.6.5
 
 commands:
   epicclan:

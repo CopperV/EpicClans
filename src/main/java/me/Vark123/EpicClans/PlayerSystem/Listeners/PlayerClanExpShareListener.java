@@ -47,6 +47,8 @@ public class PlayerClanExpShareListener implements Listener {
 									.forEach(_cp -> {
 										Player _p = Bukkit.getPlayer(_cp.getUid());
 										RpgPlayer _rpg = me.Vark123.EpicRPG.Players.PlayerManager.getInstance().getRpgPlayer(_p);
+										if(_rpg == null)
+											return;
 										
 										ExpSystem.getInstance().addRawExp(_rpg, clanExp);
 										OptionsAPI.get().getPlayerManager().getPlayerOptions(_p)
@@ -57,7 +59,7 @@ public class PlayerClanExpShareListener implements Listener {
 														if(!option.isClanExpInfo())
 															return;
 														RpgPlayerInfo info = _rpg.getInfo();
-														_p.sendMessage("§7[§r"+clan.getColor()+clan.getId()+"§7]§a+"+ amount +" xp §7[§a"+info.getExp()+" xp§7/§a"+info.getNextLevel()+" xp§7]");
+														_p.sendMessage("§7[§r"+clan.getColor()+clan.getId()+"§7]§a+"+ clanExp +" xp §7[§a"+info.getExp()+" xp§7/§a"+info.getNextLevel()+" xp§7]");
 													});
 											});
 									});

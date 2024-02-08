@@ -85,7 +85,7 @@ public final class FileManager {
 				String id = achievementSection.getString("id");
 				AchievementType type = AchievementType.valueOf(achievementSection.getString("type").toUpperCase());
 				String target = ChatColor.translateAlternateColorCodes('&', achievementSection.getString("target"));
-				String display = ChatColor.translateAlternateColorCodes('&', achievementSection.getString("target"));
+				String display = ChatColor.translateAlternateColorCodes('&', achievementSection.getString("name"));
 				List<String> lore = achievementSection.getStringList("lore").stream()
 						.map(line -> ChatColor.translateAlternateColorCodes('&', line))
 						.collect(Collectors.toList());

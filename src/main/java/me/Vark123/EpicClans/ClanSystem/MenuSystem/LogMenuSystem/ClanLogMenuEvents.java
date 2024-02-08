@@ -37,9 +37,6 @@ public final class ClanLogMenuEvents {
 
 	private EventCreator<InventoryClickEvent> clickLogListEventCreator() {
 		Consumer<InventoryClickEvent> event = e -> {
-			if(e.isCancelled())
-				return;
-			
 			Inventory inv = e.getClickedInventory();
 			if(inv == null || !inv.equals(e.getView().getTopInventory()))
 				return;
@@ -91,9 +88,6 @@ public final class ClanLogMenuEvents {
 
 	private EventCreator<InventoryClickEvent> clickLogEventCreator() {
 		Consumer<InventoryClickEvent> event = e -> {
-			if(e.isCancelled())
-				return;
-			
 			Inventory inv = e.getClickedInventory();
 			if(inv == null || !inv.equals(e.getView().getTopInventory()))
 				return;
