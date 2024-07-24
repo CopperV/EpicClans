@@ -111,6 +111,9 @@ public class RoleMenuManager {
 				.filter(role -> !ClanManager.get().getBaseRoles().contains(role))
 				.collect(Collectors.toList())
 				.size()+2;
+		size = (size-1) / 9 + 2;
+		if(size < 2) size = 2;
+		if(size > 6) size = 6;
 		RyseInventory.builder()
 			.title("§6§lRANGI KLANOWE")
 			.rows(size)
