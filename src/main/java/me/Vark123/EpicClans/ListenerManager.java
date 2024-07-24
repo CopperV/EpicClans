@@ -19,6 +19,7 @@ import me.Vark123.EpicClans.ClanSystem.EventSystem.BossFight.Listeners.BossFight
 import me.Vark123.EpicClans.ClanSystem.EventSystem.Listeners.GameRecordingStartListener;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.Listeners.GameStartListener;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.MobArena.MobArenaGame;
+import me.Vark123.EpicClans.ClanSystem.Listeners.ClanCreateResourcesListener;
 import me.Vark123.EpicClans.ClanSystem.Listeners.ClanLeaveWarehouseProtectionListener;
 import me.Vark123.EpicClans.ClanSystem.Listeners.ClanSizeProtectionListener;
 import me.Vark123.EpicClans.ClanSystem.ResourceGeneratorSystem.ResourceGeneratorListener;
@@ -53,6 +54,7 @@ public final class ListenerManager {
 		Bukkit.getPluginManager().registerEvents(new ClanKickListener(), inst);
 		Bukkit.getPluginManager().registerEvents(new ClanLeaveListener(), inst);
 		Bukkit.getPluginManager().registerEvents(new ClanRemoveListener(), inst);
+		Bukkit.getPluginManager().registerEvents(new ClanCreateResourcesListener(), inst);
 		Bukkit.getPluginManager().registerEvents(new PartyCreateListener(), inst);
 		Bukkit.getPluginManager().registerEvents(new PartyJoinListener(), inst);
 		Bukkit.getPluginManager().registerEvents(new PartyRemoveListener(), inst);

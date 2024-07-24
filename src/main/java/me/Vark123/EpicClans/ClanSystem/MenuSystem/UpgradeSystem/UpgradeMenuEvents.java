@@ -133,6 +133,7 @@ public final class UpgradeMenuEvents {
 						.ifPresentOrElse(req -> {
 							String display = upgradeItem.getItemMeta().getDisplayName();
 							if(req.checkClanRequirements(clan)) {
+								req.spendClanResources(clan);
 								clanUpgrade.setLevel(clanUpgrade.getLevel()+1);
 								
 								clan.broadcastMessage("§7§o"+p.getName()+" §bulepszyl §r"+display+" §bna poziom §7"+clanUpgrade.getLevel());
