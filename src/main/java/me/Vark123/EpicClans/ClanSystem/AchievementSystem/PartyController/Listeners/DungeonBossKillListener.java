@@ -13,6 +13,7 @@ import me.Vark123.EpicClans.ClanSystem.AchievementSystem.PartyController.ClanRun
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
 import me.Vark123.EpicParty.PlayerPartySystem.Party;
 import me.Vark123.EpicRPGSkillsAndQuests.PlayerSystem.PlayerQuestImpl.PlayerDungeonQuest;
+import me.Vark123.EpicRPGSkillsAndQuests.PlayerSystem.PlayerQuestImpl.PlayerRaidQuest;
 
 public class DungeonBossKillListener implements Listener {
 
@@ -39,6 +40,36 @@ public class DungeonBossKillListener implements Listener {
 						if(!dungeon.isSoloRun()) {
 							if(dungeon.getParty().isPresent()) {
 								Party party = dungeon.getParty().get();
+								if(!ClanRunController.get().getClanParties().containsKey(party))
+									return;
+							} else {
+								if(!ClanRunController.get().getSoloClanRuns().containsKey(killer))
+									return;
+							}
+						}
+
+						String display = victim.getName();
+						AchievementManager.get().getAchievements().stream()
+							.filter(achievement -> achievement.getType().equals(AchievementType.DUNGEON_KILL)
+									&& achievement.getTarget().equals(display)
+									&& !clan.getCompletedAchievements().contains(achievement.getId())
+									&& victim.getWorld().getName().contains(achievement.getDifficulty()))
+							.forEach(achievement -> AchievementManager.get().completeAchievement(clan, achievement));
+					});
+				});
+			});
+		});
+		PlayerManager.get().getByUID(killer.getUniqueId()).ifPresent(cPlayer -> {
+			cPlayer.getClan().ifPresent(clan -> {
+				me.Vark123.EpicRPGSkillsAndQuests.PlayerSystem.PlayerManager.get().getQuestPlayer(killer).ifPresent(qp -> {
+					qp.getActiveQuests().values().stream()
+					.filter(pQuest -> pQuest instanceof PlayerRaidQuest)
+					.map(pQuest -> (PlayerRaidQuest) pQuest)
+					.findAny()
+					.ifPresent(raid -> {
+						if(!raid.isSoloRun()) {
+							if(raid.getParty().isPresent()) {
+								Party party = raid.getParty().get();
 								if(!ClanRunController.get().getClanParties().containsKey(party))
 									return;
 							} else {
