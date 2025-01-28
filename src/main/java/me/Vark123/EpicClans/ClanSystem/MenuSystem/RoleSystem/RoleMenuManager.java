@@ -17,12 +17,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import de.tr7zw.nbtapi.NBTItem;
-import io.github.rysefoxx.inventory.anvilgui.AnvilGUI.Builder;
-import io.github.rysefoxx.inventory.anvilgui.AnvilGUI.ResponseAction;
-import io.github.rysefoxx.inventory.plugin.content.InventoryContents;
-import io.github.rysefoxx.inventory.plugin.content.InventoryProvider;
-import io.github.rysefoxx.inventory.plugin.enums.InventoryOpenerType;
-import io.github.rysefoxx.inventory.plugin.pagination.RyseInventory;
 import lombok.Getter;
 import me.Vark123.EpicClans.Config;
 import me.Vark123.EpicClans.Main;
@@ -30,6 +24,12 @@ import me.Vark123.EpicClans.ClanSystem.Clan;
 import me.Vark123.EpicClans.ClanSystem.ClanManager;
 import me.Vark123.EpicClans.ClanSystem.ClanPermission;
 import me.Vark123.EpicClans.ClanSystem.ClanRole;
+import me.Vark123.EpicInventory.Content.InventoryContents;
+import me.Vark123.EpicInventory.Content.InventoryProvider;
+import me.Vark123.EpicInventory.Enums.InventoryOpenerType;
+import me.Vark123.EpicInventory.Pagination.EpicInventory;
+import net.wesjd.anvilgui.AnvilGUI.Builder;
+import net.wesjd.anvilgui.AnvilGUI.ResponseAction;
 
 @Getter
 public class RoleMenuManager {
@@ -114,7 +114,7 @@ public class RoleMenuManager {
 		size = (size-1) / 9 + 2;
 		if(size < 2) size = 2;
 		if(size > 6) size = 6;
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§6§lRANGI KLANOWE")
 			.rows(size)
 			.disableUpdateTask()
@@ -125,7 +125,7 @@ public class RoleMenuManager {
 	}
 	
 	public void openRoleCreatorMenu(Player p, Clan clan, int stage, ItemStack progressIt) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§e§lKREATOR RANG")
 			.type(InventoryOpenerType.ANVIL)
 			.disableUpdateTask()
@@ -139,7 +139,7 @@ public class RoleMenuManager {
 				.filter(perm -> !perm.equals(ClanPermission.LEADER))
 				.collect(Collectors.toList())
 				.size()/9+2;
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§2§lEDYTOR RANGI §7["+role.getDisplay()+"§7]")
 			.rows(size)
 			.disableUpdateTask()
@@ -150,7 +150,7 @@ public class RoleMenuManager {
 	}
 	
 	public void openRoleEditorAnvilMenu(Player p, Clan clan, ClanRole role, String editor) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§2§lEDYTOR RANGI §7["+role.getDisplay()+"§7]")
 			.type(InventoryOpenerType.ANVIL)
 			.disableUpdateTask()
@@ -160,7 +160,7 @@ public class RoleMenuManager {
 	}
 	
 	public void openRoleDeleteMenu(Player p, ClanRole role) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§c§lNA PEWNO USUNAC RANGE §r"+role.getDisplay()+"§c§l?")
 			.rows(1)
 			.disableUpdateTask()

@@ -16,7 +16,7 @@ import me.Vark123.EpicClans.ClanSystem.EventSystem.IGame;
 import me.Vark123.EpicClans.ClanSystem.EventSystem.BossFight.BossFightGame;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
-import me.Vark123.EpicRPG.FightSystem.Events.EpicEffectEvent;
+import me.Vark123.EpicRPG.OldFightSystem.Events.EpicEffectEvent;
 
 public class BossFightListener implements Listener {
 

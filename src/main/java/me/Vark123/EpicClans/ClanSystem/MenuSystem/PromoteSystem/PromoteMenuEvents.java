@@ -15,7 +15,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import de.tr7zw.nbtapi.NBTItem;
-import io.github.rysefoxx.inventory.plugin.other.EventCreator;
 import lombok.Getter;
 import me.Vark123.EpicClans.Config;
 import me.Vark123.EpicClans.ClanSystem.Clan;
@@ -23,6 +22,7 @@ import me.Vark123.EpicClans.ClanSystem.ClanPermission;
 import me.Vark123.EpicClans.ClanSystem.ClanRole;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
+import me.Vark123.EpicInventory.Other.EventCreator;
 
 @Getter
 public final class PromoteMenuEvents {

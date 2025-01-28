@@ -3,12 +3,12 @@ package me.Vark123.EpicClans;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import io.github.rysefoxx.inventory.plugin.pagination.InventoryManager;
 import lombok.Getter;
 import me.Vark123.EpicClans.ClanSystem.ClanManager;
 import me.Vark123.EpicClans.Placeholders.ClanPlaceholders;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
+import me.Vark123.EpicInventory.Pagination.InventoryManager;
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import me.nikl.calendarevents.CalendarEvents;
 import me.nikl.calendarevents.CalendarEventsApi;
@@ -34,7 +34,7 @@ public class Main extends JavaPlugin {
 		playerPlaceholders = new ClanPlaceholders();
 		playerPlaceholders.register();
 		
-		CalendarEvents calend = (CalendarEvents) Bukkit.getPluginManager().getPlugin("CalendarEvents");
+		CalendarEvents calend = (CalendarEvents) Bukkit.getPluginManager().getPlugin("EpicCalendarEvents");
 		calendar = calend.getApi();
 		
 		CommandManager.setExecutors();

@@ -9,9 +9,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import io.github.rysefoxx.inventory.plugin.content.InventoryContents;
-import io.github.rysefoxx.inventory.plugin.content.InventoryProvider;
-import io.github.rysefoxx.inventory.plugin.pagination.RyseInventory;
 import lombok.Getter;
 import me.Vark123.EpicClans.Main;
 import me.Vark123.EpicClans.ClanSystem.Clan;
@@ -19,6 +16,9 @@ import me.Vark123.EpicClans.ClanSystem.ClanTreasury;
 import me.Vark123.EpicClans.ClanSystem.ResourceGeneratorSystem.ResourceGenerator;
 import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.AClanUpgrade;
 import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesManager;
+import me.Vark123.EpicInventory.Content.InventoryContents;
+import me.Vark123.EpicInventory.Content.InventoryProvider;
+import me.Vark123.EpicInventory.Pagination.EpicInventory;
 
 @Getter
 public class UpgradeMenuManager {
@@ -72,7 +72,7 @@ public class UpgradeMenuManager {
 	}
 	
 	public void openMenu(Player p, Clan clan) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§6§lULEPSZENIA KLANU")
 			.rows(3)
 			.disableUpdateTask()
@@ -83,7 +83,7 @@ public class UpgradeMenuManager {
 	}
 	
 	public void openConfirmationMenu(Player p, Clan clan, ItemStack upgradeItem) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§6§lULEPSZYC §r"+upgradeItem.getItemMeta().getDisplayName()+"§6§l?")
 			.rows(2)
 			.disableUpdateTask()

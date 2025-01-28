@@ -1,9 +1,9 @@
 name: EpicClans
-version: 1.0.2
+version: 1.0.3
 main: me.Vark123.EpicClans.Main
 author: Vark123
-depend: [CalendarEvents,MythicMobs,NBTAPI,WorldGuard,EpicRPG,EpicRPGSkillsAndQuests,EpicParty,PlaceholderAPI]
-api-version: 1.18
+depend: [EpicInventory,MythicMobs,NBTAPI,WorldGuard,EpicRPG,EpicRPGSkillsAndQuests,EpicParty,PlaceholderAPI]
+api-version: 1.21
 
 libraries:
   - io.github.rysefoxx.inventory:RyseInventory-Plugin:1.6.5

@@ -6,10 +6,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import io.github.rysefoxx.inventory.plugin.content.IntelligentItem;
-import io.github.rysefoxx.inventory.plugin.content.InventoryContents;
-import io.github.rysefoxx.inventory.plugin.content.InventoryProvider;
-import io.github.rysefoxx.inventory.plugin.pagination.RyseInventory;
 import lombok.Getter;
 import me.Vark123.EpicClans.Main;
 import me.Vark123.EpicClans.ClanSystem.Clan;
@@ -17,6 +13,10 @@ import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.AClanUpgrade;
 import me.Vark123.EpicClans.ClanSystem.UpgradeSystem.UpgradesManager;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
+import me.Vark123.EpicInventory.Content.IntelligentItem;
+import me.Vark123.EpicInventory.Content.InventoryContents;
+import me.Vark123.EpicInventory.Content.InventoryProvider;
+import me.Vark123.EpicInventory.Pagination.EpicInventory;
 
 @Getter
 public class WarehouseMenuManager {
@@ -38,7 +38,7 @@ public class WarehouseMenuManager {
 	}
 	
 	public void openMenu(Player p, Clan clan) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§2§lMAGAZYN KLANOWY")
 			.rows(1)
 			.disableUpdateTask()

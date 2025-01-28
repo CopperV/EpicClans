@@ -7,12 +7,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import io.github.rysefoxx.inventory.plugin.content.InventoryContents;
-import io.github.rysefoxx.inventory.plugin.content.InventoryProvider;
-import io.github.rysefoxx.inventory.plugin.pagination.RyseInventory;
 import lombok.Getter;
 import me.Vark123.EpicClans.Main;
 import me.Vark123.EpicClans.ClanSystem.Clan;
+import me.Vark123.EpicInventory.Content.InventoryContents;
+import me.Vark123.EpicInventory.Content.InventoryProvider;
+import me.Vark123.EpicInventory.Pagination.EpicInventory;
 
 @Getter
 public class ColorMenuManager {
@@ -84,7 +84,7 @@ public class ColorMenuManager {
 	}
 	
 	public void openMenu(Player p, Clan clan) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§6§lKOLOR KLANU")
 			.rows(4)
 			.disableUpdateTask()

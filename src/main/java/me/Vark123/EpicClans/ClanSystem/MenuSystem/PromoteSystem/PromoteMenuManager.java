@@ -12,15 +12,15 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import de.tr7zw.nbtapi.NBTItem;
-import io.github.rysefoxx.inventory.plugin.content.InventoryContents;
-import io.github.rysefoxx.inventory.plugin.content.InventoryProvider;
-import io.github.rysefoxx.inventory.plugin.pagination.RyseInventory;
 import lombok.Getter;
 import me.Vark123.EpicClans.Main;
 import me.Vark123.EpicClans.ClanSystem.Clan;
 import me.Vark123.EpicClans.ClanSystem.ClanRole;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
+import me.Vark123.EpicInventory.Content.InventoryContents;
+import me.Vark123.EpicInventory.Content.InventoryProvider;
+import me.Vark123.EpicInventory.Pagination.EpicInventory;
 
 @Getter
 public class PromoteMenuManager {
@@ -48,7 +48,7 @@ public class PromoteMenuManager {
 	}
 	
 	public void openPlayerListMenu(Player p, Clan clan) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§3§lEDYTOR RANG GRACZY")
 			.rows(2)
 			.disableUpdateTask()
@@ -59,7 +59,7 @@ public class PromoteMenuManager {
 	}
 	
 	public void openPlayerRankEditorMenu(Player moderator, OfflinePlayer target, Clan clan) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§3§lEDYTOR RANG GRACZY")
 			.rows(3)
 			.disableUpdateTask()

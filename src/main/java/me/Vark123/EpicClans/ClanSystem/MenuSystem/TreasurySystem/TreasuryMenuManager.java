@@ -8,12 +8,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import io.github.rysefoxx.inventory.anvilgui.AnvilGUI.Builder;
-import io.github.rysefoxx.inventory.anvilgui.AnvilGUI.ResponseAction;
-import io.github.rysefoxx.inventory.plugin.content.InventoryContents;
-import io.github.rysefoxx.inventory.plugin.content.InventoryProvider;
-import io.github.rysefoxx.inventory.plugin.enums.InventoryOpenerType;
-import io.github.rysefoxx.inventory.plugin.pagination.RyseInventory;
 import lombok.AccessLevel;
 import lombok.Getter;
 import me.Vark123.EpicClans.Config;
@@ -22,8 +16,14 @@ import me.Vark123.EpicClans.ClanSystem.Clan;
 import me.Vark123.EpicClans.ClanSystem.ClanTreasury;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
+import me.Vark123.EpicInventory.Content.InventoryContents;
+import me.Vark123.EpicInventory.Content.InventoryProvider;
+import me.Vark123.EpicInventory.Enums.InventoryOpenerType;
+import me.Vark123.EpicInventory.Pagination.EpicInventory;
 import me.Vark123.EpicRPG.Players.RpgPlayer;
 import me.Vark123.EpicRPG.Players.Components.RpgVault;
+import net.wesjd.anvilgui.AnvilGUI.Builder;
+import net.wesjd.anvilgui.AnvilGUI.ResponseAction;
 
 @Getter
 public final class TreasuryMenuManager {
@@ -113,7 +113,7 @@ public final class TreasuryMenuManager {
 	}
 	
 	public void openTreasury(Player p, Clan clan) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§6§lSKARBIEC KLANU")
 			.rows(2)
 			.disableUpdateTask()
@@ -124,7 +124,7 @@ public final class TreasuryMenuManager {
 	}
 	
 	public void openDonate(Player p) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§6§lSKARBIEC KLANU")
 			.rows(2)
 			.disableUpdateTask()
@@ -135,7 +135,7 @@ public final class TreasuryMenuManager {
 	}
 	
 	public void openDonateAnvil(Player p, ItemStack type) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§6§lSKARBIEC KLANU")
 			.type(InventoryOpenerType.ANVIL)
 			.disableUpdateTask()

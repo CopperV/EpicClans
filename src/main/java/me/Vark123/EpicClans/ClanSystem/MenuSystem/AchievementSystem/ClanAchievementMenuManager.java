@@ -9,14 +9,14 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import de.tr7zw.nbtapi.NBTItem;
-import io.github.rysefoxx.inventory.plugin.content.InventoryContents;
-import io.github.rysefoxx.inventory.plugin.content.InventoryProvider;
-import io.github.rysefoxx.inventory.plugin.pagination.RyseInventory;
 import lombok.Getter;
 import me.Vark123.EpicClans.Main;
 import me.Vark123.EpicClans.ClanSystem.Clan;
 import me.Vark123.EpicClans.ClanSystem.AchievementSystem.AchievementManager;
 import me.Vark123.EpicClans.ClanSystem.AchievementSystem.ClanAchievement;
+import me.Vark123.EpicInventory.Content.InventoryContents;
+import me.Vark123.EpicInventory.Content.InventoryProvider;
+import me.Vark123.EpicInventory.Pagination.EpicInventory;
 
 @Getter
 public class ClanAchievementMenuManager {
@@ -60,7 +60,7 @@ public class ClanAchievementMenuManager {
 	}
 	
 	public void openMenu(Player p, Clan clan, int page) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§b§lOSIAGNIECIA KLANOWE")
 			.rows(6)
 			.disableUpdateTask()

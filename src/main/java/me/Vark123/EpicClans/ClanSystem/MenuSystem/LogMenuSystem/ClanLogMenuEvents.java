@@ -10,12 +10,12 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import de.tr7zw.nbtapi.NBTItem;
-import io.github.rysefoxx.inventory.plugin.other.EventCreator;
 import lombok.Getter;
 import me.Vark123.EpicClans.Config;
 import me.Vark123.EpicClans.ClanSystem.Clan;
 import me.Vark123.EpicClans.PlayerSystem.ClanPlayer;
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
+import me.Vark123.EpicInventory.Other.EventCreator;
 import net.md_5.bungee.api.ChatColor;
 
 @Getter

@@ -12,11 +12,11 @@ import com.sk89q.worldguard.protection.flags.StateFlag.State;
 import com.sk89q.worldguard.protection.regions.RegionQuery;
 
 import me.Vark123.EpicClans.PlayerSystem.PlayerManager;
-import me.Vark123.EpicRPG.RuneSystem.ARune;
-import me.Vark123.EpicRPG.RuneSystem.Runes.PoteznaRunaDomisia;
-import me.Vark123.EpicRPG.RuneSystem.Runes.PoteznaRunaDomisia_M;
-import me.Vark123.EpicRPG.RuneSystem.Runes.ZadzaKrwi;
-import me.Vark123.EpicRPG.RuneSystem.Runes.Events.AllyRangedRuneUseEvent;
+import me.Vark123.EpicRPG.OldRuneSystem.ARune;
+import me.Vark123.EpicRPG.OldRuneSystem.Runes.PoteznaRunaDomisia;
+import me.Vark123.EpicRPG.OldRuneSystem.Runes.PoteznaRunaDomisia_M;
+import me.Vark123.EpicRPG.OldRuneSystem.Runes.ZadzaKrwi;
+import me.Vark123.EpicRPG.OldRuneSystem.Runes.Events.AllyRangedRuneUseEvent;
 
 public class AllyRuneUseListener implements Listener {
 	

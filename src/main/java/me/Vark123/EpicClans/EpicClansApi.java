@@ -1,8 +1,8 @@
 package me.Vark123.EpicClans;
 
-import io.github.rysefoxx.inventory.plugin.pagination.InventoryManager;
 import lombok.Getter;
 import me.Vark123.EpicClans.ClanSystem.ClanManager;
+import me.Vark123.EpicInventory.Pagination.InventoryManager;
 
 @Getter
 public final class EpicClansApi {

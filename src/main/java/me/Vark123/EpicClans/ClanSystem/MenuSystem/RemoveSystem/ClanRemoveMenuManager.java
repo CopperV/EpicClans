@@ -5,11 +5,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import io.github.rysefoxx.inventory.plugin.content.InventoryContents;
-import io.github.rysefoxx.inventory.plugin.content.InventoryProvider;
-import io.github.rysefoxx.inventory.plugin.pagination.RyseInventory;
 import lombok.Getter;
 import me.Vark123.EpicClans.Main;
+import me.Vark123.EpicInventory.Content.InventoryContents;
+import me.Vark123.EpicInventory.Content.InventoryProvider;
+import me.Vark123.EpicInventory.Pagination.EpicInventory;
 
 @Getter
 public class ClanRemoveMenuManager {
@@ -57,7 +57,7 @@ public class ClanRemoveMenuManager {
 	}
 	
 	public void openMenu(Player p) {
-		RyseInventory.builder()
+		EpicInventory.builder()
 			.title("§b§lNA PEWNO USUNAC KLAN?")
 			.rows(1)
 			.disableUpdateTask()
